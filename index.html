@@ -31,24 +31,16 @@
             <a name="LEVEL 1 PARKING" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> LEVEL 1 PARKING
           </h3>
           
-          <!--JSXively stuff
-      grabs the data from Xively-->
-          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
-          <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script> 
           <canvas id="level1park" width="600" height="300" style="border:1px solid #d3d3d3;">
   
           <script>
   
-          // Make sure the document is ready to be handled  
-          // $(document).ready(function($) { 
-          // Set the Xively API key  
-          //xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
     
     // Drawing
     var c = document.getElementById("level1park");
     var ctx = c.getContext("2d");
-    ctx.moveTo(0,0);
-    ctx.lineTo(200,100);
+    ctx.moveTo(200,0);
+    ctx.lineTo(200,300);
     ctx.stroke();
     
   </script>
