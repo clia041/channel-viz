@@ -32,6 +32,7 @@
           </h3>
           
           <canvas id="level1park" width="600" height="300" style="border:5px solid #d3d3d3;">
+          <div id="level1parkh"></div>
   
           <script>
   
@@ -53,6 +54,9 @@
     ctx.lineTo(600,200);
     ctx.stroke();
     
+    var div = document.getElementById("level1parkh");
+    div.textContent = "my text";
+    var text = div.textContent;
   </script>
           
           <h3>
