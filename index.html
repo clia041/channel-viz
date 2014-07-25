@@ -22,13 +22,11 @@
     
  <h3><small>Live datastream value</small> <span id="myelement"></span></h3>
 
-  <!--<small><a href="/xively-js/tutorial/">&larr; Back to Tutorial</a></small>-->
-
   <!-- Include jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <!-- Include XivelyJS -->
   <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
-  <!-- Our Script (should be included in a separate file, only inline for demo purposes) -->
+
   <script>
 
     // Make sure the document is ready to be handled
@@ -57,10 +55,7 @@
           // Display the current value from the updated datastream
           $(selector).html( datastream_updated["current_value"] );
         });
-
       });
-
-      // WARNING: Code here will continue executing while we get the datastream data from Xively, use the function associated with datastream.get to work with the data, when the request is complete
     });
   </script>
     
