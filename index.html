@@ -104,30 +104,34 @@
             <a name="LEVEL 2 PARKING" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> LEVEL 2 PARKING
           </h3>
           
-          <canvas id="level2park" width="900" height="600" style="border:5px solid #d3d3d3;">
-            <script>
-              // Drawing
-              var c = document.getElementById("level2park");
-              var ctx = c.getContext("2d");
-              ctx.moveTo(300,0);
-              ctx.lineTo(300,600);
-              
-              ctx.moveTo(600,0);
-              ctx.lineTo(600,600);
-              
-              ctx.moveTo(0,200);
-              ctx.lineTo(300,200);
-              
-              ctx.moveTo(0,400);
-              ctx.lineTo(300,400);
-              
-              ctx.moveTo(600,200);
-              ctx.lineTo(900,200);
-              
-              ctx.moveTo(600,400);
-              ctx.lineTo(900,400);
-              ctx.stroke();
-          </script>
+           <style>
+            table,th,td
+            {
+              border:3px solid black;
+            }
+          </style>
+          
+         <table style="width:900px">
+
+          <tr>
+    
+            <td style="text-align:center" style="width:300px" height="200">①     <button type="button" id="Book">Book</button><br/></td>
+            <td rowspan="3" style="width:300px">  </td>
+            <td style="text-align:center" style="width:300px" height="200">④     <button type="button" id="Book">Book</button><br/></td>	
+  
+          </tr>
+
+          <tr>  
+            <td style="text-align:center" height="200">②     <button type="button" id="Book">Book</button><br/></td>
+            <td style="text-align:center" height="200">⑤     <button type="button" id="Book">Book</button><br/></td>		
+          </tr>
+
+          <tr>
+            <td style="text-align:center" height="200">③     <button type="button" id="Book">Book</button><br/></td>
+            <td style="text-align:center" height="200">⑥     <button type="button" id="Book">Book</button><br/></td>		
+          </tr>
+
+      </table>
           
       </div>    
     </div>
