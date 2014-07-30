@@ -18,7 +18,7 @@
         execute('PUT', '2')
       }
       
-      function execute($method, $url='https://xively.com/feeds/1868918819'){
+      function execute($method, $url="https://xively.com/feeds/1868918819"){
         xmlhttp=new XMLHttpRequest();
         xmlhttp.open($method, $url, true)
         xmlhttp.send(null);
