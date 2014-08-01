@@ -11,20 +11,6 @@
     
     <title>Smarter Parking by clia041</title>
     
-    <script>
-      var xmlhttp;
-      
-      function test(){
-        execute('PUT', '2')
-      }
-      
-      function execute($method, $url="https://xively.com/feeds/1868918819"){
-        xmlhttp=new XMLHttpRequest();
-        xmlhttp.open($method, $url, true)
-        xmlhttp.send(null);
-      }
-    </script>
-    
   </head>
 
   <body>
@@ -65,6 +51,25 @@
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           // Display the current value from the updated datastream
           $(selector).html( datastream_updated["current_value"] );
+        });
+      });
+    });
+  </script>
+  
+  <script>
+    $(document).ready(function() {
+      var bookData = '2';
+      $("#Book").click(function() {
+        $.ajax( {
+          url: 
+          type: 'PUT',
+          data: bookData
+          success:function(data,textStatus,xhr){
+            console.log(data);
+          },
+          error: function(xhr, textStatus, errorThrown){
+            console.log('Error in Operation');
+          }
         });
       });
     });
