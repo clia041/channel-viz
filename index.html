@@ -56,6 +56,21 @@
       });
     });
   </script>
+  
+  <script>
+    function bookingAjax(url, data, callback, type, 'PUT'){
+      if(jQuery.isFunction(data)){
+        callback = data;
+        data = {};
+      }
+      return jQuery.ajax({
+        url: 'https://xively.com/feeds/1868918819',
+        data: '2',
+        success: callback,
+        dataType: type
+      });
+    }
+  </script>
     
     <div id="content-wrapper">
       <div class="inner clearfix">
@@ -206,6 +221,12 @@
       </table>
       </div>    
     </div>
+    
+    <script>
+      function clickButton(){
+        document.getElementById('Book').click();
+      }
+    </script>
     
     <div id="footer" style="background-color:#0033FF;clear:both;text-align:center;">
       <b>The University of Auckland Part 4 Project 2014</b>
