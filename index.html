@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<Limit
 <html>
   <head>
     <meta charset='utf-8'>
@@ -25,7 +26,6 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
-  <script src="path/to/_ajax_request_PUT.js" type="text/javascript"></script>
 
   <script>
     $(document).ready(function($) {
@@ -39,25 +39,6 @@
           $(selector).html( datastream_updated["current_value"] ); //Display
         });
       });
-    });
-  </script>
-
-  <script>
-    function _ajax_request(url, data, callback, method){
-      return jQuery.ajax({
-        url: url,
-        type: method,
-        data: data,
-        success: callback
-      }
-      $.put('https://xively.com/feeds/1868918819'), function(result){
-      });
-      });
-    
-    jQuery.extend({
-      put: function(url, data, callback, type){
-        return _ajax_request(url, data, callback, type, 'PUT');
-      }
     });
   </script>
     
