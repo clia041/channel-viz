@@ -42,14 +42,16 @@
   </script>
 
   <script>
-    function _ajax_request(url, data, callback, type, method){
+    function _ajax_request(url, data, callback, method){
       return jQuery.ajax({
-        url: 'https://xively.com/feeds/1868918819',
-        data: '2',
-        success: callback,
-        dataType: type
+        url: url,
+        type: method,
+        data: data,
+        success: callback
+      }
+      $.put('https://xively.com/feeds/1868918819'), function(result){
       });
-    }
+      });
     
     jQuery.extend({
       put: function(url, data, callback, type){
