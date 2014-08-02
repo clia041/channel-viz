@@ -40,29 +40,9 @@
       });
     });
   </script>
-  
+
   <script>
-    $(document).ready(function() {
-      var bookData = '2';
-      $("#Book").click(function() {
-        $.ajax( {
-          url: 'https://xively.com/feeds/1868918819'
-          type: 'PUT',
-          data: bookData
-          success:function(data){
-            alert('Load was performed');
-          }
-        });
-      });
-    });
-  </script>
-  
-  <script>
-    function bookingAjax(url, data, callback, type, 'PUT'){
-      if(jQuery.isFunction(data)){
-        callback = data;
-        data = {};
-      }
+    function _ajax_request(url, data, callback, type, method){
       return jQuery.ajax({
         url: 'https://xively.com/feeds/1868918819',
         data: '2',
@@ -70,6 +50,12 @@
         dataType: type
       });
     }
+    
+    jQuery.extend({
+      put: function(url, data, callback, type){
+        return _ajax_request(url, data, callback, type, 'PUT');
+      }
+    });
   </script>
     
     <div id="content-wrapper">
@@ -223,11 +209,6 @@
       </div>    
     </div>
     
-    <script>
-      function clickButton(){
-        document.getElementById('Book').click();
-      }
-    </script>
     
     <div id="footer" style="background-color:#0033FF;clear:both;text-align:center;">
       <b>The University of Auckland Part 4 Project 2014</b>
