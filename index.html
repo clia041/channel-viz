@@ -23,34 +23,19 @@
     
      <h3><small>Live datastream value: </small> <span id="myelement"></span></h3>
 
-  <!-- Include jQuery -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <!-- Include XivelyJS -->
   <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
 
   <script>
-
-    // Make sure the document is ready to be handled
     $(document).ready(function($) {
-
-      // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)
       xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
-
-      // Replace with your own values
-      var feedID        = 1868918819,          // Feed ID (the last number on the URL on the feed page on Xively)
-          datastreamID  = "Sensor1";       // Datastream ID
-          selector      = "#myelement";   // Your element on the page - takes any valid jQuery selector
-
-      // Get datastream data from Xively
+      var feedID        = 1868918819,   
+          datastreamID  = "Sensor1";     
+          selector      = "#myelement";  
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-
-        // Display the current value from the datastream
         $(selector).html( datastream["current_value"] );
-
-        // Getting realtime! The function associated with the subscribe method will be executed every time there is an update to the datastream
-        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
-          // Display the current value from the updated datastream
-          $(selector).html( datastream_updated["current_value"] );
+        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) { //Realtime
+          $(selector).html( datastream_updated["current_value"] ); //Display
         });
       });
     });
@@ -77,7 +62,8 @@
         <section id="main-content">
         
           <h3>
-            <a name="LEVEL 1 PARKING" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> LEVEL 1 PARKING
+            <a name="LEVEL 1 PARKING" class="anchor" href="#welcome-to-github-pages">
+            <span class="octicon octicon-link"></span></a> LEVEL 1 PARKING
           </h3>
           <style>
             table,th,td
@@ -151,7 +137,8 @@
         <section id="main-content">
         
           <h3>
-            <a name="LEVEL 2 PARKING" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a> LEVEL 2 PARKING
+            <a name="LEVEL 2 PARKING" class="anchor" href="#welcome-to-github-pages">
+            <span class="octicon octicon-link"></span></a> LEVEL 2 PARKING
           </h3>
           
           <style>
