@@ -70,7 +70,7 @@ PUT /v2/feeds/1868918819.xml
       var bookData = '2';
       $("#Book").click(function() {
         $.ajax( {
-          url: 
+          url: 'https://xively.com/feeds/1868918819'
           type: 'PUT',
           data: bookData
           success:function(data,textStatus,xhr){
@@ -83,8 +83,6 @@ PUT /v2/feeds/1868918819.xml
       });
     });
   </script>
-    
-   <button onclick="test();">Test</button> 
     
     <div id="content-wrapper">
       <div class="inner clearfix">
