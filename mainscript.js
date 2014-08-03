@@ -1,20 +1,17 @@
 (function ( $ ){
   "use strict";
 
-  var feedID = 79650;
-
-  // SET API KEY
+  var feedID = 1868918819;
+  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
   
-  xively.setKey( "FzZOVUxKRPl_Tvvtr1z77b8gOVCSAKxlTnlwSzQrZ3U4MD0g" ); // do not use this one, create your own at xively.com
-
   // get all feed data in one shot
-
   xively.feed.get (feedID, function (data) {
     // this code is executed when we get data back from Xively
 
     var feed = data,
         datastream,
         value,
+        
         // function for setting up the toggle inputs
         handleToggle = function ( datastreamID, value ) {
           var $toggle = $(".js-"+ datastreamID +"-toggle");
@@ -33,7 +30,7 @@
             $(".app-state").addClass("loading").fadeIn(200);
 
             if ( this.checked ) {
-              xively.datastream.update(feedID, datastreamID, { "current_value": 1 }, function(){
+              xively.datastream.update(feedID, datastreamID, { "current_value": 2 }, function(){
                 $(".app-state").removeClass("loading").fadeOut(200);
               });
             }
