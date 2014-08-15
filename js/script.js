@@ -33,7 +33,7 @@
             $(".app-state").addClass("loading").fadeIn(200);
 
             if ( this.checked ) {
-              xively.datastream.update(feedID, datastreamID, { "current_value": 1 }, function(){
+              xively.datastream.update(feedID, datastreamID, { "current_value": 50 }, function(){
                 $(".app-state").removeClass("loading").fadeOut(200);
               });
             }
@@ -73,56 +73,9 @@
 
       // TV
 
-      if ( datastream.id === "tv-state" ) {
-        handleToggle( "tv-state", value );
+      if ( datastream.id === "Sensor4" ) {
+        handleToggle( "Sensor4", value );
       }
-
-      // MUSIC
-
-      if ( datastream.id === "volume" ) {
-        var $range = $(".js-volume");
-        
-        // set value
-        $range.val(value);
-
-        // save changes
-        $range.on("custom-change", function( event, val ) {
-          $(".app-state").addClass("loading").fadeIn(200);
-          xively.datastream.update(feedID, "volume", { "current_value": val }, function(){
-            $(".app-state").removeClass("loading").fadeOut(200);
-          });
-        });
-
-        // make it live
-        xively.datastream.subscribe(feedID, "volume", function ( event, data ) {
-          ui.fakeLoad();
-          $range.val(parseInt(data["current_value"]));
-        });
-
-      }      
-
-      // TEMPERATURE
-
-      if ( datastream.id === "temperature" ) {
-        var $temperature = $(".js-temperature");
-
-        $temperature.html( datastream["current_value"] );
-
-        // save changes
-        $temperature.on("custom-change", function( event, val ) {
-          $(".app-state").addClass("loading").fadeIn(200);
-          xively.datastream.update(feedID, "temperature", { "current_value": val }, function(){
-            $(".app-state").removeClass("loading").fadeOut(200);
-          });
-        });
-
-        // make it live
-        xively.datastream.subscribe( feedID, "temperature", function ( event , data ) {
-          ui.fakeLoad();
-          $temperature.html( data["current_value"] );
-        });
-      }
-    }
 
     // SHOW UI
 
