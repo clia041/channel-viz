@@ -1,11 +1,11 @@
 (function ( $ ){
   "use strict";
 
-  var feedID = 79650;
+  var feedID =  1868918819;
 
   // SET API KEY
   
-  xively.setKey( "FzZOVUxKRPl_Tvvtr1z77b8gOVCSAKxlTnlwSzQrZ3U4MD0g" ); // do not use this one, create your own at xively.com
+  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" ); 
 
   // get all feed data in one shot
 
@@ -67,8 +67,8 @@
 
       // LIGHTS
 
-      if ( datastream.id === "lights" ) {
-        handleToggle( "lights", value );
+      if ( datastream.id === "Sensor1" ) {
+        handleToggle( "Sensor1", value );
       }
 
       // TV
