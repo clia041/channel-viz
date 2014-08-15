@@ -79,10 +79,10 @@
 
     // SHOW UI
 
-    $(".app-loading").fadeOut(200, function(){
-     $(".app-content-inner").addClass("open");
-    });
-  });
+   // $(".app-loading").fadeOut(200, function(){
+     //$(".app-content-inner").addClass("open");
+    //});
+  //});
 
 
 })( jQuery );
