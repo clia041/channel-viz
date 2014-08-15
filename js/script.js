@@ -33,7 +33,7 @@
             $(".app-state").addClass("loading").fadeIn(200);
 
             if ( this.checked ) {
-              xively.datastream.update(feedID, datastreamID, { "current_value": 50 }, function(){
+              xively.datastream.update(feedID, datastreamID, { "current_value": 1 }, function(){
                 $(".app-state").removeClass("loading").fadeOut(200);
               });
             }
