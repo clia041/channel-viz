@@ -67,7 +67,7 @@
       
       function handleBook1()
          xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-            $('.datastream-value').xively('get', { feed: 1868918819, datastream: 'Sensor1' });
+            $('.datastream-value').xively('live', { feed: 1868918819, datastream: 'Sensor1' });
     });
   </script>
    
