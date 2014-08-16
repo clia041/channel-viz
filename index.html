@@ -54,12 +54,7 @@
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           $(selector).html( datastream_updated["current_value"] );
         });
-        
-         handleBook1=function(){
-            // Set current value on elements  
-            $('.datastream-value').xively('get', { feed: 1868918819, datastream: 'Sensor1' });  
-            // Set and update value in realtime  
-            $('.datastream-value').xively('live', { feed: 1868918819, datastream: 'Sensor1' }); 
+       
          };
       });
     });   
