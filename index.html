@@ -70,7 +70,7 @@
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
          handleBook1=(function(){
-           $('datastream-value').xively('live', feedID, datastreamID) ;
+           $('10').xively('live', feedID, datastreamID) ;
            $(selector).html( datastream["current_value"] );
          });
       });
