@@ -61,11 +61,10 @@
       $.ajax({
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
-         headers: {
-            'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'
-         },
+         
          data: 'Sensor1,1', // or $('#myform').serializeArray()
-         success: function() { alert('PUT completed'); }
+         success: function() { alert('PUT completed'); },
+         headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
     };
    
