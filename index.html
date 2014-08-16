@@ -31,6 +31,7 @@
           
           
           <h2><small>Live datastream value</small> <span id="myelement"></span></h2>
+          <h2><small>Change datastream value</small> <span id="myelement1"></span></h2>
 
 
    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
@@ -65,12 +66,13 @@
 
       var feedID        = 1868918819,  
           datastreamID  = "Sensor1";     
-          selector      = "#myelement"; 
+          selector      = "#myelement1"; 
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-         handleBook1=function(){
+         handleBook1=(function(){
            $('datastream-value').xively('live', feedID, datastreamID) ;
-         };
+           $(selector).html( datastream["current_value"] );
+         });
       });
   </script>
    
