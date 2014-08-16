@@ -151,14 +151,18 @@
       for( var i=0; i < 5; i++ )
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
-    return text;
-   document.getElementById("bookCode1").innerHTML=bookCode();
+    //return text;
+    }
+    
+    showCode=function(){
+       document.getElementById("bookCode1").innerHTML=bookCode();
     }
     
     
     bookHandleAndCode=function(){
        handleBook1();
        bookCode();
+       showCode();
     };
    
   </script>
