@@ -31,7 +31,6 @@
           
           
           <h2><small>Live datastream value</small> <span id="myelement"></span></h2>
-          <h2><small>Change datastream value</small> <span id="myelement1"></span></h2>
 
 
    <script src="js/jquery.js"></script>
@@ -76,8 +75,8 @@
         text += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return text;
-
-    };
+    }
+    document.getElementById("bookCode1").innerHTML=bookCode();
    
   </script>
 
@@ -94,6 +93,10 @@
     
             <td style="text-align:center" style="width:300px" height="200">1     
             <button type="button" onclick="handleBook1(); bookCode()"> BOOK </button>
+            
+            <form id="bookCode1">
+               This is your booking code:
+            </form>
                 
                 <form>
                   Booking Code: <input type="text" name="code" size="10"><br>  
