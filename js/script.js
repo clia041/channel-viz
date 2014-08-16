@@ -5,8 +5,7 @@
 
   // SET API KEY
   
-  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" ); // do not use this one, create your own at xively.com
-
+  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" ); 
   // get all feed data in one shot
 
   xively.feed.get (feedID, function (data) {
@@ -33,7 +32,7 @@
             $(".app-state").addClass("loading").fadeIn(200);
 
             if ( this.checked ) {
-              xively.datastream.update(feedID, datastreamID, { "current_value": 1 }, function(){
+              xively.datastream.update(feedID, datastreamID, { "current_value": 25 }, function(){
                 $(".app-state").removeClass("loading").fadeOut(200);
               });
             }
