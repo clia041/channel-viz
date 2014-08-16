@@ -179,10 +179,11 @@
     };
    
    confirmBookCode1=function(){
-      if (document.getElementsByName("codeEnter1") === bookCode1())
+      var enteredC = document.getElementsByName('codeEnter1').value;
+      if (enteredC === bookCode1())
          bookToTaken1();
       else
-         document.write('wrong code');
+         document.writeln('wrong code');
    }
   </script>
    
