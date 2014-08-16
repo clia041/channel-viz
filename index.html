@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- <html>
    <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -17,7 +16,7 @@
     <div class="inner">
     <header>
         <h1>Smarter Parking</h1>
-        <h2>Parking has never been easier</h2>
+        <h2> </h2>
       </div>
     </header>
 
@@ -29,6 +28,9 @@
             <a name="LEVEL 1 PARKING" class="anchor" >
             <span class="octicon octicon-link"></span></a> LEVEL 1 PARKING
           </h3>
+          
+          <h3>Live datastream value <span id="myelement"></span></h3>
+          
           <style>
             table,th,td
             {
@@ -102,112 +104,27 @@
           
       </div>
     </div>
-    -->
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-  <title>xivelyJS Sample App</title>
-  <meta name="description" content="App built to sample the use of xivelyJS">
-  <meta name="viewport" content="width=device-width">
-
-  <!-- stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- typekit font -->
-  <script type="text/javascript" src="//use.typekit.net/nfj5apq.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-  <!-- modernizr -->
-  <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script>
-</head>
-<body>
-
-  <div class="app-container">
-
-    <header class="app-header clearfix">
-      <h1 class="app-logo js-app-title icon-home">Dashboard</h1>
-      <div class="app-state"><span class="app-loading-loader"></span></div>
-    </header>
-
-    <div role="main" class="app-content clearfix">
-
-      <div class="app-loading"><span class="app-loading-loader"></span></div>
-
-      <div class="app-content-inner">
-        
-        <form class="dashboard-control js-form clearfix">
-          <fieldset>
-
-            <div class="field clearfix">
-              <label class="input-label icon-lamp" for="lights">Park1 Test</label>
-              <input id="lights" class="input js-lights hidden" type="checkbox">
-              <div class="js-lights-toggle ui-toggle" data-toggle=".js-lights">
-                <span class="ui-toggle-slide clearfix">
-                  <strong class="ui-toggle-on">ON</strong>
-                  <strong class="ui-toggle-handle brushed-metal"></strong>
-                  <strong class="ui-toggle-off">OFF</strong>
-                </span>
-              </div>
-            </div>
-
-            <div class="field clearfix">
-              <label class="input-label icon-tv" for="tv-state">TV</label>
-              <input id="tv-state" class="input js-tv-state hidden" type="checkbox">
-              <div class="js-tv-state-toggle ui-toggle" data-toggle=".js-tv-state">
-                <span class="ui-toggle-slide clearfix">
-                  <strong class="ui-toggle-on">ON</strong>
-                  <strong class="ui-toggle-handle brushed-metal"></strong>
-                  <strong class="ui-toggle-off">OFF</strong>
-                </span>
-              </div>
-            </div>
-
-            <div class="field clearfix">
-              <label class="input-label icon-volume-high" for="volume">Music</label>
-              <button class="volume-up js-volume-up icon-volume-high"></button>
-              <input id="volume" class="input range js-volume" type="range" data-range>
-              <button class="volume-down js-volume-down icon-volume-low"></button>
-            </div>
-
-          </fieldset>
-        </form>
-
-        <section class="dashboard-monitor clearfix">
-          <div class="monitor clearfix">
-            <span class="monitor-label icon-temperature">Temperature</span>
-            <button class="temp-up js-temp-up">+</button>
-            <span class="monitor-value"><strong class="js-temperature">--</strong> °C</span>
-            <button class="temp-down js-temp-down">-</button>
-          </div>
-        </section>
-      </div>
-
-    </div>
-
-    <footer class="app-footer clearfix">
-      <p class="view-feed">
-        <a href="/xively-js/sample-app/home/">View Home <span>&rarr;</span></a>
-        <a href="/xively-js/"><span>&larr;</span> Back to xivelyJS</a>
-      </p>
-      <a class="xively-logo ir" href="https://xively.com/feeds/79650"><span class="visuallyhidden">Powered by xively</span></a>
-    </footer>
-
-  </div>
+   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>  
+<script>  
+ $(document).ready(function($) {  
   
-  <!-- jquery from CDN - with fallback to local -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-
-  <!-- xivelyJS from CDN - with fallback to local -->
-  <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
-  <script>window.xively || document.write('<script src="js/vendor/xivelyjs-1.0.4.min.js"><\/script>')</script>
-
-  <!-- UI js -->
-  <script src="js/ui.js"></script>
-
-  <!-- the main script, where the magic happens -->
-  <script src="js/script.js"></script>
+  // Set the Xively API key (https://xively.com/users/YOUR_USERNAME/keys)  
+  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );  
+  
+  // Replace with your own values  
+  var feedID        = 1868918819,          // Feed ID  
+      datastreamID  = "Sensor1";       // Datastream ID  
+      selector      = "#myelement";   // Your element on the page  
+      
+      xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
+      // Display the current value from the updated datastream  
+      $(selector).html( datastream_updated["current_value"] );  
+    });  
+   
+</script>
+   
+   
 </body>
 </html>
