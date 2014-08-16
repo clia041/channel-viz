@@ -118,10 +118,7 @@
       datastreamID  = "Sensor1";       // Datastream ID  
       selector      = "#myelement";   // Your element on the page  
       
-      xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {  
-      // Display the current value from the updated datastream  
-      $(selector).html( datastream_updated["current_value"] );  
-    });  
+    $(selector).html( datastream["current_value"] );  
    
 </script>
    
