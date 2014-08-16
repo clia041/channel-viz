@@ -53,10 +53,25 @@
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           $(selector).html( datastream_updated["current_value"] );
         });
-       
       });
     });   
       
+  </script>
+  
+  <script>
+     $(document).ready(function($) {
+
+      xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
+
+      var feedID        = 1868918819,  
+          datastreamID  = "Sensor1";     
+          selector      = "#myelement"; 
+
+      xively.datastream.get (feedID, datastreamID, function ( datastream ) {
+         handleToggle=function(){
+           $('datastream-value').xively('live', feedID, datastreamID) ;
+         };
+      });
   </script>
    
           <style>
