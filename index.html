@@ -30,6 +30,7 @@
           </h3>
           
           <h3>Live datastream value <span id="myelement"></span></h3>
+          <h3>11 here: <span id = "booked"></span></h3>
           
           <style>
             table,th,td
@@ -116,7 +117,7 @@
   var feedID        = 1868918819,          // Feed ID  
       datastreamID  = "Sensor1";       // Datastream ID  
       selector      = "#myelement";   // Your element on the page  
-      datastream-value = "11";
+      datastream-value = "#booked";
       
       
     xively.datastream.get (feedID, datastreamID, function ( datastream ) {   
@@ -127,7 +128,7 @@
 
       });
       
-      $('.datastream-value').xively('live', { feed: 1868918819, datastream: 'Sensor1' });  
+      $('11').xively('live', { feed: 1868918819, datastream: 'Sensor1' });  
 </script>
    
    
