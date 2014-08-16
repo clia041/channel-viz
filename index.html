@@ -29,6 +29,32 @@
             <span class="octicon octicon-link"></span></a> LEVEL 1 PARKING
           </h3>
           
+          <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>  
+<script>  
+ $(document).ready(function($) {  
+  
+  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );  
+  
+  // Replace with your own values  
+  var feedID        = 1868918819,          // Feed ID  
+      datastreamID  = "Sensor1";       // Datastream ID  
+      selector      = "#myelement";   // Your element on the page  
+      datastream-value = "#booked";
+      
+      
+    xively.datastream.get (feedID, datastreamID, function ( datastream ) {   
+    $(selector).html( datastream["current_value"] );  
+    //xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
+   //$(selector).html( datastream_updated["current_value"] );
+        //});
+
+      });
+      
+      $('11').xively('get', { feed: 1868918819, datastream: 'Sensor1' });  
+</script>
+   
+          
           <h3>Live datastream value <span id="myelement"></span></h3>
           <h3>11 here: <span id ="booked"></span></h3>
           
@@ -105,32 +131,6 @@
           
       </div>
     </div>
-   
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>  
-<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>  
-<script>  
- $(document).ready(function($) {  
-  
-  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );  
-  
-  // Replace with your own values  
-  var feedID        = 1868918819,          // Feed ID  
-      datastreamID  = "Sensor1";       // Datastream ID  
-      selector      = "#myelement";   // Your element on the page  
-      datastream-value = "#booked";
-      
-      
-    xively.datastream.get (feedID, datastreamID, function ( datastream ) {   
-    $(selector).html( datastream["current_value"] );  
-    //xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
-   //$(selector).html( datastream_updated["current_value"] );
-        //});
-
-      });
-      
-      $('11').xively('get', { feed: 1868918819, datastream: 'Sensor1' });  
-</script>
-   
    
 </body>
 </html>
