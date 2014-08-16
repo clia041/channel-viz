@@ -51,7 +51,7 @@
             </form>
                 
                 <form>
-                  Booking Code: <input type="text" name="codeEnter1" size="10"><br> 
+                  Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
                   <button type="button" onclick="confirmBookCode1()"> CONFIRM </button>
                 </form>
                 
@@ -179,7 +179,7 @@
     };
    
    confirmBookCode1=function(){
-      var enteredC = document.getElementsByName('codeEnter1').value;
+      var enteredC = document.getElementById('codeEnter1').value;
       document.writeln(enteredC);
       if (enteredC === bookCode1())
          bookToTaken1();
