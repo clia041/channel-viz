@@ -69,10 +69,10 @@
           selector      = "#myelement1"; 
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-         handleBook1=(function(){
-           $('10').xively('live', feedID, datastreamID) ;
+         handleBook1=function() {
+           $(10).xively('live', feedID, datastreamID) ;
            $(selector).html( datastream["current_value"] );
-         });
+         };
       });
   </script>
    
