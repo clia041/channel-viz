@@ -44,7 +44,7 @@
       
       
     xively.datastream.get (feedID, datastreamID, function ( datastream ) {   
-    //$(selector).html( datastream["current_value"] );  
+    $(selector).html( datastream["current_value"] );  
     xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
       $(selector).html( datastream_updated["current_value"] );
         });
