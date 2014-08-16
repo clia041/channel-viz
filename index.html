@@ -51,7 +51,7 @@
             </form>
                 
                 <form>
-                  Booking Code: <input type="text" name="code" size="10"><br>  
+                  Booking Code: <input type="text" name="codeEnter1" size="10"><br>  
                 </form>
                 
             </td>
@@ -144,6 +144,18 @@
       });
     };
     
+    bookToTaken1=function(){
+        $.ajax({
+         url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+         type: 'PUT',
+         
+         data: 'Sensor1,1', // or $('#myform').serializeArray()
+         success: function() { alert('PUT completed'); },
+         headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+      });
+    };
+    }
+    
     bookCode1=function(){
       var code1="";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -165,6 +177,12 @@
        showCode1();
     };
    
+   confirmBookCode1=function(){
+      if (document.getElementsByName("codeEnter1") === bookCode1())
+         bookToTaken1();
+      else
+         document.getElementsByName("codeEnter1").style.display="wrong code"
+   }
   </script>
    
    
