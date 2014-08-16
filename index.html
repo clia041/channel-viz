@@ -108,8 +108,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <title>Smarter Parking</title>
-  <meta name="description" content="Smart parking app">
+  <title>xivelyJS Sample App</title>
+  <meta name="description" content="App built to sample the use of xivelyJS">
   <meta name="viewport" content="width=device-width">
 
   <!-- stylesheet -->
@@ -127,7 +127,7 @@
   <div class="app-container">
 
     <header class="app-header clearfix">
-      <h1 class="app-logo js-app-title icon-home">Smarter Parking</h1>
+      <h1 class="app-logo js-app-title icon-home">Dashboard</h1>
       <div class="app-state"><span class="app-loading-loader"></span></div>
     </header>
 
@@ -163,9 +163,39 @@
                 </span>
               </div>
             </div>
-    
-    
-    
+
+            <div class="field clearfix">
+              <label class="input-label icon-volume-high" for="volume">Music</label>
+              <button class="volume-up js-volume-up icon-volume-high"></button>
+              <input id="volume" class="input range js-volume" type="range" data-range>
+              <button class="volume-down js-volume-down icon-volume-low"></button>
+            </div>
+
+          </fieldset>
+        </form>
+
+        <section class="dashboard-monitor clearfix">
+          <div class="monitor clearfix">
+            <span class="monitor-label icon-temperature">Temperature</span>
+            <button class="temp-up js-temp-up">+</button>
+            <span class="monitor-value"><strong class="js-temperature">--</strong> °C</span>
+            <button class="temp-down js-temp-down">-</button>
+          </div>
+        </section>
+      </div>
+
+    </div>
+
+    <footer class="app-footer clearfix">
+      <p class="view-feed">
+        <a href="/xively-js/sample-app/home/">View Home <span>&rarr;</span></a>
+        <a href="/xively-js/"><span>&larr;</span> Back to xivelyJS</a>
+      </p>
+      <a class="xively-logo ir" href="https://xively.com/feeds/79650"><span class="visuallyhidden">Powered by xively</span></a>
+    </footer>
+
+  </div>
+  
   <!-- jquery from CDN - with fallback to local -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
@@ -179,5 +209,5 @@
 
   <!-- the main script, where the magic happens -->
   <script src="js/script.js"></script>
-  </body>
+</body>
 </html>
