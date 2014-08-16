@@ -1,11 +1,11 @@
 (function ( $ ){
   "use strict";
 
-  var feedID =  1868918819;
+  var feedID = 1868918819;
 
   // SET API KEY
   
-  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" ); 
+  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" ); // do not use this one, create your own at xively.com
 
   // get all feed data in one shot
 
@@ -67,22 +67,69 @@
 
       // LIGHTS
 
-      if ( datastream.id === "Sensor1" ) {
-        handleToggle( "Sensor1", value );
+      if ( datastream.id === "lights" ) {
+        handleToggle( "lights", value );
       }
 
       // TV
 
-      if ( datastream.id === "Sensor4" ) {
-        handleToggle( "Sensor4", value );
+      if ( datastream.id === "tv-state" ) {
+        handleToggle( "tv-state", value );
       }
+
+      // MUSIC
+
+      if ( datastream.id === "volume" ) {
+        var $range = $(".js-volume");
+        
+        // set value
+        $range.val(value);
+
+        // save changes
+        $range.on("custom-change", function( event, val ) {
+          $(".app-state").addClass("loading").fadeIn(200);
+          xively.datastream.update(feedID, "volume", { "current_value": val }, function(){
+            $(".app-state").removeClass("loading").fadeOut(200);
+          });
+        });
+
+        // make it live
+        xively.datastream.subscribe(feedID, "volume", function ( event, data ) {
+          ui.fakeLoad();
+          $range.val(parseInt(data["current_value"]));
+        });
+
+      }      
+
+      // TEMPERATURE
+
+      if ( datastream.id === "temperature" ) {
+        var $temperature = $(".js-temperature");
+
+        $temperature.html( datastream["current_value"] );
+
+        // save changes
+        $temperature.on("custom-change", function( event, val ) {
+          $(".app-state").addClass("loading").fadeIn(200);
+          xively.datastream.update(feedID, "temperature", { "current_value": val }, function(){
+            $(".app-state").removeClass("loading").fadeOut(200);
+          });
+        });
+
+        // make it live
+        xively.datastream.subscribe( feedID, "temperature", function ( event , data ) {
+          ui.fakeLoad();
+          $temperature.html( data["current_value"] );
+        });
+      }
+    }
 
     // SHOW UI
 
-   // $(".app-loading").fadeOut(200, function(){
-     //$(".app-content-inner").addClass("open");
-    //});
-  //});
+    $(".app-loading").fadeOut(200, function(){
+     $(".app-content-inner").addClass("open");
+    });
+  });
 
 
 })( jQuery );
