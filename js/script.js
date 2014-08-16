@@ -60,9 +60,9 @@
 
     // loop through datastreams
 
-    for (var x = 0, len = feed.datastreams.length; x < len; x++) {
-      datastream = feed.datastreams[x];
-      value = parseInt(datastream["current_value"]);
+   // for (var x = 0, len = feed.datastreams.length; x < len; x++) {
+     // datastream = feed.datastreams[x];
+      //value = parseInt(datastream["current_value"]);
 
       // LIGHTS
 
