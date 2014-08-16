@@ -180,11 +180,12 @@
    
    confirmBookCode1=function(){
       var enteredC = document.getElementById('codeEnter1').value;
-      document.writeln(enteredC);
-      if (enteredC === bookCode1())
+   
+      if (enteredC === bookCode1()){
          bookToTaken1();
       else
          document.writeln('wrong code');
+      }
    }
   </script>
    
