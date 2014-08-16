@@ -67,8 +67,8 @@
 
       // LIGHTS
 
-      if ( datastream.id === "lights" ) {
-        handleToggle( "lights", value );
+      if ( datastream.id === "Sensor1" ) {
+        handleToggle( "Sensor1", value );
       }
 
       // TV
