@@ -165,6 +165,19 @@
         code1 += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return code1;
+    
+    confirmBookCode1=function(){
+      var enteredC = document.getElementById('codeEnter1').value;
+      document.write(code1);
+      document.write(enteredC);
+   
+      if (enteredC == code1) {
+         bookToTaken1();
+   }else{
+         document.write('WRONG CODE, PLEASE REFRESH THE PAGE AND TRY AGAIN, OR YOU HAVE PARKED IN A BOOKED SPOT :(');
+      }
+   }
+   
     }
     
     showCode1=function(){
@@ -178,17 +191,7 @@
        showCode1();
     };
    
-   confirmBookCode1=function(){
-      var enteredC = document.getElementById('codeEnter1').value;
-      document.write(bookCode1());
-      document.write(enteredC);
    
-      if (enteredC == bookCode1()) {
-         bookToTaken1();
-   }else{
-         document.write('WRONG CODE, PLEASE REFRESH THE PAGE AND TRY AGAIN, OR YOU HAVE PARKED IN A BOOKED SPOT :(');
-      }
-   }
   </script>
    
    
