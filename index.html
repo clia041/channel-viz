@@ -1,76 +1,59 @@
 <!DOCTYPE html>
    <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <meta charset='utf-8'>
+      <meta http-equiv="X-UA-Compatible" content="chrome=1">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+      <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+      <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
    
+      <title>Smarter Parking</title>
     
-    <title>Smarter Parking</title>
-    
-         <!-- stylesheet
-  <link rel="stylesheet" href="css/style.css">
+      <!-- stylesheet
+      <link rel="stylesheet" href="css/style.css">
 
-  <!-- typekit font
-  <script type="text/javascript" src="//use.typekit.net/nfj5apq.js"></script>
-  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+      <!-- typekit font
+      <script type="text/javascript" src="//use.typekit.net/nfj5apq.js"></script>
+      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
-  <!-- modernizr
-  <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script> -->
-  
-  </head>
-
- <body>
-    <div class="inner">
-    
-    <header>
+      <!-- modernizr
+      <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script> -->
+   </head>
+   <body>
+      <div class="inner">
+      <header>
         <h1>Smarter Parking</h1>
         <h2> </h2>
-        
       </div>
-    </header>
+      </header>
     
-    <div id="content-wrapper">
-     <div class="inner clearfix">
-      
-        <section id="main-content">
-        
-          <h3>
-            <a name="LEVEL 1 PARKING" class="anchor" >
-            <span class="octicon octicon-link"></span></a> LEVEL 1 PARKING
-          </h3>
-          
-          
-          <h2><small>Live datastream value</small> <span id="myelement"></span></h2>
-
-          <style>
-            table,th,td
-            {
+   <div id="content-wrapper">
+      <div class="inner clearfix">
+      <section id="main-content">
+         <h3><a name="LEVEL 1 PARKING" class="anchor" ><span class="octicon octicon-link"></span></a> LEVEL 1 PARKING</h3>
+         <!--<h2><small>Live datastream value</small> <span id="myelement"></span></h2>-->
+         <style>
+            table,th,td {
               border:3px solid black;
             }
-          </style>
+         </style>
           
          <table>
-
-          <tr>
-    
-            <td style="text-align:center" style="width:300px" height="200">1     
-            <button type="button" onclick="bookHandleAndCode()"> BOOK </button>
+            <tr>
+               <td style="text-align:center" style="width:300px" height="200">1     
+               <button type="button" onclick="bookHandleAndCode()"> BOOK </button>
             
-            <form id=bookCode1>
-               <p> Press Book to obtain your unique booking code</p>
-            </form>
+               <form id=bookCode1>
+                  <p> Press Book to obtain your unique booking code</p>
+               </form>
                 
-                <form>
+               <form>
                   Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
-                  <button type="button" onclick="confirmBookCode1()"> CONFIRM </button>
-                </form>
-                
-            </td>
+                  <button type="button" onclick="bookCode1.confirmBookCode1()"> CONFIRM </button>
+               </form>
+               </td>
             
             <td rowspan="3" style="width:200px"></td>
             
