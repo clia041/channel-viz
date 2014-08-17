@@ -155,11 +155,12 @@
     };
    
     var code1="";
+    var i;
     bookCode1=function(){
      
       var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
-      for( var i=0; i < 5; i++ )
+      for( i=0; i < 5; i++ )
         code1 += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return code1;
@@ -172,7 +173,7 @@
          bookToTaken1();
          document.write('TY :)')
       }else{
-         document.write('WRONG CODE, PLEASE REFRESH THE PAGE AND TRY AGAIN, OR YOU HAVE PARKED IN A BOOKED SPOT :(');
+         document.write('WRONG CODE, :(');
          }
     };
     
