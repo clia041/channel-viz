@@ -155,13 +155,14 @@
     };
    
     var code1="";
-    var i;
+    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+      
+      for( var i=0; i < 5; i++ )
+        code1 += possible.charAt(Math.floor(Math.random() * possible.length));
+    
     bookCode1=function(){
      
-      var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
-      for( i=0; i < 5; i++ )
-        code1 += possible.charAt(Math.floor(Math.random() * possible.length));
 
     return code1;
     };
