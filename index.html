@@ -154,9 +154,9 @@
       });
     };
    
-   var code1;
+   
     bookCode1=function(){
-      
+      var code1="";
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
       
       for( var i=0; i < 5; i++ )
@@ -168,7 +168,7 @@
     confirmBookCode1=function(){
       var enteredC = document.getElementById('codeEnter1').value;
       document.write(enteredC);
-      document.write(code1);
+      document.write(bookCode1.code1);
       if (enteredC == code1) {
          bookToTaken1();
          document.write('TY :)')
