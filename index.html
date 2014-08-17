@@ -153,43 +153,31 @@
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
     };
-    
-    
+   
+   var code1="";
     bookCode1=function(){
-      var code1="";
+      
       var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
       
       for( var i=0; i < 5; i++ )
         code1 += possible.charAt(Math.floor(Math.random() * possible.length));
 
-    //return code1;
-    
-    confirmBookCode1=function(){
-       return code1;
+    return code1;
     };
     
-    var codee1=new bookCode1();
-    var enteredC = document.getElementById('codeEnter1').value;
-    codee1.confirmBookCode1();
-    
-     if (enteredC == code1) {
+    confirmBookCode1=function(){
+      var enteredC = document.getElementById('codeEnter1').value;
+      if (enteredC == code1) {
          bookToTaken1();
          document.write('TY :)')
       }else{
          document.write('WRONG CODE, PLEASE REFRESH THE PAGE AND TRY AGAIN, OR YOU HAVE PARKED IN A BOOKED SPOT :(');
          }
-   
-   };
-   
-    
-    
-    
-    
+    };
     
     showCode1=function(){
       document.getElementById("bookCode1").innerHTML=bookCode1();
     };
-    
     
     bookHandleAndCode=function(){
        handleBook1();
@@ -197,9 +185,7 @@
        showCode1();
     };
    
-   
   </script>
-   
    
 </body>
 </html>
