@@ -137,7 +137,7 @@
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
          
-         data: 'Sensor3,1', // or $('#myform').serializeArray()
+         data: 'Sensor3,1',
          success: function() { alert('PUT completed'); },
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
@@ -167,8 +167,7 @@
     
     confirmBookCode1=function(){
       var enteredC = document.getElementById('codeEnter1').value;
-      document.write(enteredC);
-      document.write(code1);
+
       if (enteredC == code1) {
          bookToTaken1();
          document.write('TY :)')
