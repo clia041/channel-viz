@@ -140,17 +140,11 @@
             b1tx.strokeText("BOOKED",36,50);
       };
          
-      
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           $(selector1).html( datastream_updated["current_value"] );
         });
     });   
     
-    var f=document.getElementById("space1");
-    var ftx=f.getContext("2d");
-    ftx.font = "50px Arial";
-    ftx.strokeStyle="rgb(154,205,50)";
-    ftx.strokeText("FREE",36,50);
     
     handleBook1=function(){
       $.ajax({
