@@ -45,6 +45,7 @@
             <tr>
                <td style="text-align:center" style="width:300px" height="200">1     
                <button type="button" onclick="bookHandleAndCode()"> BOOK </button>
+               <canvas id="space1" width="200" height="100"</canvas>
             
                <form id=bookCode1>
                   <p> Press Book to obtain your unique booking code</p>
@@ -132,6 +133,10 @@
         });
       });
     });   
+    
+    var c=document.getElementById("space1");
+    var ctx=c.getContext("2d");
+    ctx.fillstyle="#FF0000"
   
     handleBook1=function(){
       $.ajax({
