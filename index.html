@@ -139,6 +139,10 @@
     ctx.font = "30px Arial";
     ctx.strokeText("FREE",10,50);
     
+    var grd = ctx.createRadialGradient(75,50,5,90,60,100);
+    grd.addColourStop(0,"green");
+    grd.addColourStop(1,"white")
+    
   
     handleBook1=function(){
       $.ajax({
