@@ -116,26 +116,26 @@
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
       
-      if( $(selector1).html( datastream["current_value"] )== '0'){
+      if(datastream["current_value"] == '0'){
             var f1=document.getElementById("space1");
             var f1tx=f1.getContext("2d");
             f1tx.font = "50px Arial";
             f1tx.strokeStyle="rgb(154,205,50)";
             f1tx.strokeText("FREE",36,50);
       }
-      else if($(selector1).html( datastream["current_value"] )== '1'){
+      else if((datastream["current_value"] == '1'){
             var t1=document.getElementById("space1");
             var t1tx=t1.getContext("2d");
             t1tx.font = "50px Arial";
             t1tx.strokeStyle="rgb(154,205,50)";
-            t1tx.strokeText("FREE",36,50);
+            t1tx.strokeText("TAKEN",36,50);
       }
-      else if($(selector1).html( datastream["current_value"] )== '2'){
+      else if((datastream["current_value"] == '2'){
             var b1=document.getElementById("space1");
             var b1tx=b1.getContext("2d");
             b1tx.font = "50px Arial";
             b1tx.strokeStyle="rgb(154,205,50)";
-            b1tx.strokeText("FREE",36,50);
+            b1tx.strokeText("BOOKED",36,50);
       }
          
       
