@@ -55,6 +55,10 @@
                   Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
                   <button type="button" onclick="confirmBookCode1()"> CONFIRM </button>
                </form>
+               
+               <form id=bookConfirmed>
+               
+               </form>
                </td>
             
             <td rowspan="3" style="width:200px"></td>
@@ -183,9 +187,9 @@
 
       if (enteredC == code1) {
          bookToTaken1();
-         document.write('TY :)')
+         document.getElementById("bookConfirmed").innerHTML="TY :)";
       }else{
-         document.write('WRONG CODE, :(');
+          document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
          }
     };
     
