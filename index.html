@@ -111,15 +111,38 @@
       xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
 
       var feedID        = 1868918819,  
-          datastreamID  = "Sensor3";     
-          selector1      = "#myelement1"; 
+          datastreamID  = "Sensor1";     
+          selector1      = "#myelement1";
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-        $(selector1).html( datastream["current_value"] );
+      
+      if( $(selector1).html( datastream["current_value"] )== '0'){
+            var f1=document.getElementById("space1");
+            var f1tx=f1.getContext("2d");
+            f1tx.font = "50px Arial";
+            f1tx.strokeStyle="rgb(154,205,50)";
+            f1tx.strokeText("FREE",36,50);
+      }
+      else if($(selector1).html( datastream["current_value"] )== '1'){
+            var t1=document.getElementById("space1");
+            var t1tx=t1.getContext("2d");
+            t1tx.font = "50px Arial";
+            t1tx.strokeStyle="rgb(154,205,50)";
+            t1tx.strokeText("FREE",36,50);
+      }
+      else if($(selector1).html( datastream["current_value"] )== '2'){
+            var b1=document.getElementById("space1");
+            var b1tx=b1.getContext("2d");
+            b1tx.font = "50px Arial";
+            b1tx.strokeStyle="rgb(154,205,50)";
+            b1tx.strokeText("FREE",36,50);
+      }
+         
+      
+      
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
           $(selector1).html( datastream_updated["current_value"] );
         });
-      });
     });   
     
     var f=document.getElementById("space1");
