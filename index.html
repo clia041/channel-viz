@@ -3,80 +3,64 @@
       <meta charset='utf-8'>
       <meta http-equiv="X-UA-Compatible" content="chrome=1">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-   <!--stylesheet--> 
       <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
       <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
       <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-   <!--Tab title-->
+<!--Tab Title-->
       <title>Smarter Parking</title>
-    
-      <!-- stylesheet
-      <link rel="stylesheet" href="css/style.css">
-
-      <!-- typekit font
-      <script type="text/javascript" src="//use.typekit.net/nfj5apq.js"></script>
-      <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-
-      <!-- modernizr
-      <script type="text/javascript" src="js/vendor/modernizr-2.6.2.min.js"></script> -->
    </head>
-   
+<!--Headings-->   
    <body>
       <div class="inner">
       <header>
         <h1>Smarter Parking</h1>
-        <h2> </h2>
+        <h2>Parking has never been easier</h2>
       </div>
       </header>
     
    <div id="content-wrapper">
-      <div class="inner clearfix">
-      <section id="main-content">
-         <h3><a name="LEVEL 1 PARKING" class="anchor" ><span class="octicon octicon-link"></span></a> LEVEL 1 PARKING</h3>
-         <!--<h2><small>Live datastream value</small> <span id="myelement"></span></h2>-->
-         <style>
-            table,th,td {
-              border:3px solid black;
-            }
-         </style>
+   <div class="inner clearfix">
+   <section id="main-content">
+      <h3><a name="LEVEL 1 PARKING" class="anchor" ><span class="octicon octicon-link"></span></a> LEVEL 1 PARKING</h3>
+      <style>
+         table,th,td {
+         border:3px solid black;
+         }
+      </style>
           
-         <table>
-            <col width="300">
-            <tr>
-               <td style="text-align:center" style="width:300px" height="200">1     
-               <button type="button" onclick="bookHandleAndCode()"> BOOK </button>
-               <canvas id="space1" width="200" height="100"></canvas>
-            
-               <form id=bookCode1>
-                  <p> Press Book to obtain your unique booking code</p>
-               </form>
-                
-               <form>
-                  Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
-                  <button type="button" onclick="confirmBookCode1()"> CONFIRM </button>
-               </form>
-               
-               <form id=bookConfirmed>
-               
-               </form>
-               </td>
-            
-            <td rowspan="3" style="width:200px"></td>
-            
-            <td style="text-align:center" style="width:300px" height="200">④     
-               <label for="book1">Book!</label>
-               <input id="book1" type="checkbox">
-              <form>
-                 Booking Code: <input type="text" name="code" size="10"><br>  
-              </form>
-            </td>	
-          </tr>
+      <table>
+         <col width="300">
+         <tr>
+<!--Parking Space 1-->
+         <td style="text-align:center" style="width:300px" height="200">1     
+            <button type="button" onclick="bookHandleAndCode()"> BOOK </button>
+            <canvas id="space1" width="200" height="100"></canvas>
+            <form id=bookCode1>
+               <p> Press Book to obtain your unique booking code</p>
+            </form>
+            <form>
+               Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
+               <button type="button" onclick="confirmBookCode1()"> CONFIRM </button>
+            </form>
+            <form id=bookConfirmed>
+            </form>
+         </td>
+<!--Middle Space-->   
+         <td rowspan="3" style="width:200px"></td>
+<!--Parking Space 2-->    
+         <td style="text-align:center" style="width:300px" height="200">④     
+            <label for="book1">Book!</label>
+            <input id="book1" type="checkbox">
+            <form>
+               Booking Code: <input type="text" name="code" size="10"><br>  
+            </form>
+         </td>	
+         </tr>
 
-          <tr>
-          
-            <td style="text-align:center" style="width:300px" height="200">②     
-               <label for="book1">Book!</label>
+         <tr>
+         <td style="text-align:center" style="width:300px" height="200">②     
+            <label for="book1">Book!</label>
                <input id="book1" type="checkbox">
               <form>
                 Booking Code: <input type="text" name="code" size="10"><br>  
@@ -128,7 +112,7 @@
 
       var feedID        = 1868918819,  
           datastreamID  = "Sensor3";     
-          selector      = "#myelement"; 
+          selector      = "#myelement1"; 
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
 
@@ -146,16 +130,10 @@
     ftx.strokeStyle="rgb(154,205,50)";
     ftx.strokeText("FREE",36,50);
     
-    
-   
-    
-    
-  
     handleBook1=function(){
       $.ajax({
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
-         
          data: 'Sensor1,2',
          success: function() { alert('PUT completed'); },
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
@@ -176,13 +154,10 @@
     var code1="";
     var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
-      for( var i=0; i < 5; i++ )
-        code1 += possible.charAt(Math.floor(Math.random() * possible.length));
+   for( var i=0; i < 5; i++ )
+      code1 += possible.charAt(Math.floor(Math.random() * possible.length));
     
     bookCode1=function(){
-     
-      
-
     return code1;
     };
     
@@ -205,8 +180,13 @@
        handleBook1();
        bookCode1();
        showCode1();
+       checkSpace1();
     };
    
+   checkSpace1=function(){
+     element1=document.querySelector("#myelement1");
+     document.write(element1);
+   };
   </script>
    
 </body>
