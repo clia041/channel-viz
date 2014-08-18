@@ -112,14 +112,12 @@
 
       var feedID        = 1868918819,  
           datastreamID  = "Sensor3";     
-          selector      = "#myelement1"; 
+          selector1      = "#myelement1"; 
 
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-
-        $(selector).html( datastream["current_value"] );
-
+        $(selector1).html( datastream["current_value"] );
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
-          $(selector).html( datastream_updated["current_value"] );
+          $(selector1).html( datastream_updated["current_value"] );
         });
       });
     });   
@@ -135,7 +133,6 @@
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
          data: 'Sensor1,2',
-         success: function() { alert('PUT completed'); },
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
     };
@@ -144,9 +141,7 @@
         $.ajax({
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
-         
          data: 'Sensor1,1',
-         success: function() { alert('PUT completed'); },
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
     };
@@ -180,13 +175,7 @@
        handleBook1();
        bookCode1();
        showCode1();
-       checkSpace1();
     };
-   
-   checkSpace1=function(){
-     element1=document.querySelector("#myelement1");
-     document.write(element1);
-   };
   </script>
    
 </body>
