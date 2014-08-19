@@ -43,7 +43,7 @@
             </form>
             <form>
                Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
-               <button type="button" id="confirm1"> CONFIRM </button>
+               <button type="button" id="confirm1" onclick="confirmCode1()"> CONFIRM </button>
             </form>
             <form id=bookConfirmed>
             </form>
@@ -153,7 +153,7 @@
             b1tx.strokeText("BOOKED",36,50);
       };
       
-            $('#confirm1').click(function(){
+            $('#confirm1').click(confirmCode1(){
          var enteredC = document.getElementById('codeEnter1').value;
          if(datastream_updated["current_value"] == '2'){
             if (enteredC == code1) {
