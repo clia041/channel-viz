@@ -43,7 +43,7 @@
             </form>
             <form>
                Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
-               <button type="button" onclick="confirmBookCode1()"> CONFIRM </button>
+               <button type="button" id="confirm1"> CONFIRM </button>
             </form>
             <form id=bookConfirmed>
             </form>
@@ -152,19 +152,21 @@
             b1tx.strokeStyle="rgb(154,205,50)";
             b1tx.strokeText("BOOKED",36,50);
       };
-        });
-        
-            confirmBookCode1=function(){
-      var enteredC = document.getElementById('codeEnter1').value;
-      if(datastream_updated["current_value"] == '2'){
-         if (enteredC == code1) {
-            bookToTaken1();
-            document.getElementById("bookConfirmed").innerHTML="TY :)";
-      }else{
-          document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
+      
+            $('#confirm1').click(function(){
+         var enteredC = document.getElementById('codeEnter1').value;
+         if(datastream_updated["current_value"] == '2'){
+            if (enteredC == code1) {
+               bookToTaken1();
+               document.getElementById("bookConfirmed").innerHTML="TY :)";
+         }else{
+            document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
          }
       };
-    };
+    });
+        });
+        
+
     });   
     
     
