@@ -155,6 +155,7 @@
       
          confirmCode1=function(){
          var enteredC = document.getElementById('codeEnter1').value;
+         
          if(datastream_updated["current_value"] == '2'){
             if (enteredC == code1) {
                bookToTaken1();
@@ -162,9 +163,8 @@
          }else{
             document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
          };
-      };
+             };
          };
-    };
         });
         
 
