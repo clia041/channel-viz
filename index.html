@@ -153,7 +153,7 @@
             b1tx.strokeText("BOOKED",36,50);
       };
       
-            $('#confirm1').click(confirmCode1(){
+         $('#confirm1').click(confirmCode1() {
          var enteredC = document.getElementById('codeEnter1').value;
          if(datastream_updated["current_value"] == '2'){
             if (enteredC == code1) {
@@ -163,6 +163,7 @@
             document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
          }
       };
+         };
     });
         });
         
