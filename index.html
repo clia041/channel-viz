@@ -43,7 +43,7 @@
             </form>
             <form>
                Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
-               <button type="button" id="confirm1" onclick="confirmCode()"> CONFIRM </button>
+               <button type="button" id="confirm1" onclick="confirmCode1()"> CONFIRM </button>
             </form>
             <form id=bookConfirmed>
             </form>
@@ -152,8 +152,14 @@
             b1tx.strokeStyle="rgb(154,205,50)";
             b1tx.strokeText("BOOKED",36,50);
       };
-         confirmCode1=function(){
+
+        });
+    });  
+    
+      confirmCode1=function(){
          var enteredC = document.getElementById('codeEnter1').value;
+         
+         xively.datastream.subscribe( feedID, datastreamID, hello=function ( event , datastream_updated ) {
          
          if(datastream_updated["current_value"] == '2'){
             if (enteredC == code1) {
@@ -163,18 +169,10 @@
             document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
          };
              };
+             
+          });
          }
-
-        });
-        
-
-
-    });  
-    
-    confirmCode=function(){
-      hello();
-      hello.confirmCode1();
-    };
+   
     
     handleBook1=function(){
       $.ajax({
