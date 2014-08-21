@@ -43,7 +43,7 @@
             </form>
             <form>
                Booking Code: <input type="text" id="codeEnter1" name="code1" size="10"><br> 
-               <button type="button" id="confirm1" onclick="confirmCode1()"> CONFIRM </button>
+               <button type="button" id="confirm1" onclick="hello(event, datastream_updated)";"hello.confirmCode1()"> CONFIRM </button>
             </form>
             <form id=bookConfirmed>
             </form>
@@ -121,7 +121,7 @@
       
       $(selector1).html(datastream["current_value"]);
       
-        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
+        xively.datastream.subscribe( feedID, datastreamID, hello=function ( event , datastream_updated ) {
            
          if (datastream_updated["current_value"] == '0'){
          
