@@ -195,8 +195,11 @@
       
    for( var i=0; i < 5; i++ )
       code1 += possible.charAt(Math.floor(Math.random() * possible.length));
+      
+      saveCode1=function(){
       $.cookie("code1s","code1");
-    
+      };
+      
     bookCode1=function(){
     return code1;
     };
@@ -210,6 +213,7 @@
        handleBook1();
        bookCode1();
        showCode1();
+       saveCode1();
     };
     });
     
