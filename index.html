@@ -152,24 +152,9 @@
             b1tx.strokeStyle="rgb(154,205,50)";
             b1tx.strokeText("BOOKED",36,50);
       };
-
-        });
-    });  
-    
-      confirmCode1=function(){
-         var enteredC = document.getElementById('codeEnter1').value;
-         
-      xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
-
-      var feedID        = 1868918819,  
-          datastreamID  = "Sensor1";     
-          selector1      = "#myelement1";
-
-      xively.datastream.get (feedID, datastreamID, function ( datastream ) {
       
-      $(selector1).html(datastream["current_value"]);
-         
-         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
+            confirmCode1=function(){
+         var enteredC = document.getElementById('codeEnter1').value;
          
          if(datastream_updated["current_value"] == '2'){
             if (enteredC == code1) {
@@ -179,10 +164,12 @@
             document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
          };
              };
-             
-          });
-      });
          }
+
+        });
+    });  
+    
+
    
     
     handleBook1=function(){
