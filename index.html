@@ -196,10 +196,11 @@
     var code1="";
     var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
-   for( var i=0; i < 5; i++ )
+   for( var i=0; i < 5; i++ ){
       code1 += possible.charAt(Math.floor(Math.random() * possible.length));
       localStorage.setItem("code1", code1);
-      
+   };
+   
     bookCode1=function(){
     return code1;
     };
