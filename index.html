@@ -109,7 +109,7 @@
  
   <script>
 
-    //$(document).ready(function($) {
+    $(document).ready(function($) {
 
       xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
 
@@ -152,7 +152,7 @@
             b1tx.strokeStyle="rgb(154,205,50)";
             b1tx.strokeText("BOOKED",36,50);
       };
-                    confirmCode1=function(){
+         confirmCode1=function(){
          var enteredC = document.getElementById('codeEnter1').value;
          
          if(datastream_updated["current_value"] == '2'){
@@ -169,10 +169,7 @@
         
 
 
-   // });   
-    
-    
-
+    });   
     
     handleBook1=function(){
       $.ajax({
