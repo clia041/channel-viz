@@ -157,7 +157,7 @@
          var enteredC = document.getElementById('codeEnter1').value;
          
          if(datastream_updated["current_value"] == '2'){
-            if (enteredC == code1) {
+            if (enteredC == code1s) {
                bookToTaken1();
                document.getElementById("bookConfirmed").innerHTML="TY :)";
          }else{
@@ -195,6 +195,7 @@
       
    for( var i=0; i < 5; i++ )
       code1 += possible.charAt(Math.floor(Math.random() * possible.length));
+      $.cookie("code1s","code1");
     
     bookCode1=function(){
     return code1;
