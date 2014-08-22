@@ -96,7 +96,7 @@
     document.getElementById("bookCode1").innerHTML=bookCode1();
   }
     
-  bookHandling=function(){
+  function bookHandling(){
     handleBook1();
     bookCode1();
     showCode1();
