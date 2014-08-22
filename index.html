@@ -110,9 +110,7 @@
   <script>
 
     $(document).ready(function($) {
-
-     
-       xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
+      xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
 
       var feedID        = 1868918819,  
           datastreamID  = "Sensor1";     
@@ -153,27 +151,24 @@
             b1tx.strokeText("BOOKED",36,50);
       };
       
-            confirmCode1=function(){
+      confirmCode1=function(){
          var enteredC = document.getElementById("codeEnter1").value;
          var code1s = localStorage.getItem("code1");
-         
-         
          
          if(datastream_updated["current_value"] == '2'){
             if (enteredC == code1s) {
                bookToTaken1();
                document.getElementById("bookConfirmed").innerHTML="TY :)";
-         }else{
-            document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
+            }else{
+               document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
+            };
          };
-             };
-         }
+         
+      }
 
-        });
+      });
     });  
     
-
-   
     // Writes 2 to xively datastream
     function handleBook1(){
       $.ajax({
@@ -198,11 +193,9 @@
    var code1="";
    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
-   for( var i=0; i < 5; i++ ){
+   for( var i=0; i < 5; i++ )
       code1 += possible.charAt(Math.floor(Math.random() * possible.length));
-      localStorage.setItem("code1", code1);
-   };
-   
+
    // Returns the booking code
     function bookCode1(){
     return code1;
