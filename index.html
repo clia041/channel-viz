@@ -119,6 +119,7 @@
       xively.datastream.get (feedID, datastreamID, function ( datastream ) {
       
       $(selector1).html(datastream["current_value"]);
+      
         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
            
          if (datastream_updated["current_value"] == '0'){
@@ -211,10 +212,11 @@
        handleBook1();
        bookCode1();
        showCode1();
-    }
+    };
     
     
     });
+    
     
   </script>
    
