@@ -52,7 +52,13 @@
         };
       }
     });
-  });  
+  });
+  
+  function bookHandling(){
+    handleBook1();
+    bookCode1();
+    showCode1();
+  }
    
   function handleBook1(){
     $.ajax({
@@ -94,11 +100,5 @@
   
   function showCode1(){
     document.getElementById("bookCode1").innerHTML=bookCode1();
-  }
-    
-  function bookHandling(){
-    handleBook1();
-    bookCode1();
-    showCode1();
   }
 });
