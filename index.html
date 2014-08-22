@@ -51,13 +51,19 @@
 <!--Middle Space-->   
          <td rowspan="3" style="width:200px"></td>
 <!--Parking Space 2-->    
-         <td style="text-align:center" style="width:300px" height="200">④     
-            <label for="book1">Book!</label>
-            <input id="book1" type="checkbox">
-            <form>
-               Booking Code: <input type="text" name="code" size="10"><br>  
+         <td style="text-align:center" style="width:300px" height="200">2     
+            <button type="button" onclick="bookHandling()"> BOOK </button>
+            <canvas id="space2" width="200" height="100"></canvas>
+            <form id="bookCode2">
+               <p> Press Book to obtain your unique booking code</p>
             </form>
-         </td>	
+            <form>
+               Booking Code: <input type="text" id="codeEnter2" size="10"><br> 
+               <button type="button" id="confirm1" onclick="confirmCode2()"> CONFIRM </button>
+            </form>
+            <form id="bookConfirmed">
+            </form>
+         </td>
          </tr>
 
          <tr>
@@ -383,7 +389,7 @@
     });
   }
 
-  var code1="";
+  var code1, code2, code3, code4, code5, code6, code7, code8, code9, code10, code11, code12,="";
   var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
   for( var i=0; i < 5; i++ ){
