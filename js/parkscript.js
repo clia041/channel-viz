@@ -68,15 +68,6 @@
     });
   }
       
-  function handleBook1(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor1,2',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
-      
   function bookToTaken1(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
