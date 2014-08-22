@@ -36,7 +36,7 @@
          <tr>
 <!--Parking Space 1-->
          <td style="text-align:center" style="width:300px" height="200">1     
-            <button type="button" onclick="bookHandleAndCode()"> BOOK </button>
+            <button type="button" onclick="bookHandling()"> BOOK </button>
             <canvas id="space1" width="200" height="100"></canvas>
             <form id="bookCode1">
                <p> Press Book to obtain your unique booking code</p>
@@ -97,11 +97,10 @@
           </tr>
 
       </table>
-      
-          
       </div>
       </div>
     </div>
+    
     
     
    <script src="js/jquery.js"></script>
@@ -109,114 +108,105 @@
  
   <script>
 
-    $(document).ready(function($) {
+   $(document).ready(function($) {
       xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
-
       var feedID        = 1868918819,  
           datastreamID  = "Sensor1";     
           selector1      = "#myelement1";
 
-      xively.datastream.get (feedID, datastreamID, function ( datastream ) {
-      
+      xively.datastream.get (feedID, datastreamID, function ( datastream ){
       $(selector1).html(datastream["current_value"]);
-      
-        xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ) {
-           
-         if (datastream_updated["current_value"] == '0'){
+         xively.datastream.subscribe( feedID, datastreamID, function ( event , datastream_updated ){
+            if (datastream_updated["current_value"] == '0'){
+               
+               var f1=document.getElementById("space1");
+               var f1tx=f1.getContext("2d");
+            
+               f1tx.clearRect(0,0,space1.width,space1.height);
+               f1tx.font = "50px Arial";
+               f1tx.strokeStyle="rgb(154,205,50)";
+               f1tx.strokeText("FREE",36,50);
+            
+            } else if(datastream_updated["current_value"] == '1') {
          
-            var f1=document.getElementById("space1");
-            var f1tx=f1.getContext("2d");
+               var t1=document.getElementById("space1");
+               var t1tx=t1.getContext("2d");
             
-            f1tx.clearRect(0,0,space1.width,space1.height);
-            f1tx.font = "50px Arial";
-            f1tx.strokeStyle="rgb(154,205,50)";
-            f1tx.strokeText("FREE",36,50);
+               t1tx.clearRect(0,0,space1.width,space1.height);
+               t1tx.font = "50px Arial";
+               t1tx.strokeStyle="rgb(154,205,50)";
+               t1tx.strokeText("TAKEN",36,50);
             
-      } else if(datastream_updated["current_value"] == '1') {
-         
-            var t1=document.getElementById("space1");
-            var t1tx=t1.getContext("2d");
+            } else if(datastream_updated["current_value"] == '2'){
+               var b1=document.getElementById("space1");
+               var b1tx=b1.getContext("2d");
             
-            t1tx.clearRect(0,0,space1.width,space1.height);
-            t1tx.font = "50px Arial";
-            t1tx.strokeStyle="rgb(154,205,50)";
-            t1tx.strokeText("TAKEN",36,50);
-            
-      } else if(datastream_updated["current_value"] == '2'){
-            var b1=document.getElementById("space1");
-            var b1tx=b1.getContext("2d");
-            
-            b1tx.clearRect(0,0,space1.width,space1.height);
-            b1tx.font = "50px Arial";
-            b1tx.strokeStyle="rgb(154,205,50)";
-            b1tx.strokeText("BOOKED",36,50);
-      };
-      
-      confirmCode1=function(){
-         var enteredC = document.getElementById("codeEnter1").value;
-         var code1s = localStorage.getItem("code1");
-         
-         if(datastream_updated["current_value"] == '2'){
-            if (enteredC == code1s) {
-               bookToTaken1();
-               document.getElementById("bookConfirmed").innerHTML="TY :)";
-            }else{
-               document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
+               b1tx.clearRect(0,0,space1.width,space1.height);
+               b1tx.font = "50px Arial";
+               b1tx.strokeStyle="rgb(154,205,50)";
+               b1tx.strokeText("BOOKED",36,50);
             };
-         };
+      
+            function confirmCode(){
+               var enteredC = document.getElementById("codeEnter1").value;
+               var code1s = localStorage.getItem("code1");
          
+               if(datastream_updated["current_value"] == '2'){
+                  if (enteredC == code1s){
+                     bookToTaken1();
+                     document.getElementById("bookConfirmed").innerHTML="TY :)";
+                  }else{
+                     document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
+                  };
+               };
+            }
+         });
+      });  
+      //-----------------------------------------------------------------------------------------
+      // Writes 2 to xively datastream
+      function handleBook1(){
+         $.ajax({
+            url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+            type: 'PUT',
+            data: 'Sensor1,2',
+            headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+         });
+      }
+   
+    // Changes xively data to 1 after confirmation of booking
+      function bookToTaken1(){
+         $.ajax({
+            url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+            type: 'PUT',
+            data: 'Sensor1,1',
+            headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+         });
       }
 
-      });
-    });  
-    
-    // Writes 2 to xively datastream
-    function handleBook1(){
-      $.ajax({
-         url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-         type: 'PUT',
-         data: 'Sensor1,2',
-         headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-      });
-    }
-    
-    // Changes xively data to 1 after confirmation of booking
-    function bookToTaken1(){
-        $.ajax({
-         url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-         type: 'PUT',
-         data: 'Sensor1,1',
-         headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-      });
-    }
-
-   
-   var code1="";
-   var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+      var code1="";
+      var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
-   for( var i=0; i < 5; i++ )
-      code1 += possible.charAt(Math.floor(Math.random() * possible.length));
+      for( var i=0; i < 5; i++ ){
+         code1 += possible.charAt(Math.floor(Math.random() * possible.length));
+      };
 
    // Returns the booking code
-    function bookCode1(){
-    return code1;
-    }
+      function bookCode1(){
+         return code1;
+      }
     
    // Displays the booking code
-    function showCode1(){
-      document.getElementById("bookCode1").innerHTML=bookCode1();
-    }
+      function showCode1(){
+         document.getElementById("bookCode1").innerHTML=bookCode1();
+      }
     
     // Handles the booking and then displays the code
-    function bookHandleAndCode(){
-       handleBook1();
-       bookCode1();
-       showCode1();
-    }
-    
-    });
-    
+      function bookHandling(){
+         handleBook1();
+         bookCode1();
+         showCode1();
+      }
+   });
   </script>
-   
 </body>
 </html>
