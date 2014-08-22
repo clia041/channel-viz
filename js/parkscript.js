@@ -1,5 +1,4 @@
 (function($) {
-  "use strict";
   
   var feedID        = 1868918819,  
       datastreamID  = "Sensor1";     
