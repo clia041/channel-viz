@@ -174,47 +174,52 @@
     
 
    
-    
-    handleBook1=function(){
+    // Writes 2 to xively datastream
+    function handleBook1(){
       $.ajax({
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
          data: 'Sensor1,2',
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
-    };
+    }
     
-    bookToTaken1=function(){
+    // Changes xively data to 1 after confirmation of booking
+    function bookToTaken1(){
         $.ajax({
          url: 'https://api.xively.com/v2/feeds/1868918819.csv',
          type: 'PUT',
          data: 'Sensor1,1',
          headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
       });
-    };
+    }
+
    
-    var code1="";
-    var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
+   var code1="";
+   var possible = "abcdefghijklmnopqrstuvwxyz0123456789";
       
    for( var i=0; i < 5; i++ ){
       code1 += possible.charAt(Math.floor(Math.random() * possible.length));
       localStorage.setItem("code1", code1);
    };
    
-    bookCode1=function(){
+   // Returns the booking code
+    function bookCode1(){
     return code1;
-    };
+    }
     
-
-    showCode1=function(){
+   // Displays the booking code
+    function showCode1(){
       document.getElementById("bookCode1").innerHTML=bookCode1();
-    };
+    }
     
-    bookHandleAndCode=function(){
+    // Handles the booking and then displays the code
+    function bookHandleAndCode=(){
        handleBook1();
        bookCode1();
        showCode1();
-    };
+    }
+    
     });
     
   </script>
