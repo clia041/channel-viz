@@ -147,6 +147,7 @@
    function creditCode1(type){
       var element1 = document.createElement("input");
       var button1 = document.createElement("button");
+      var btnText = document.createTextNode("SUBMIT");
       
       element1.setAttribute("type", type);
       element1.setAttribute("name", type);
@@ -160,6 +161,7 @@
       
       document.getElementById("book1").innerHTML = "Please enter your credit card number"
       cardSpace.appendChild(element1);
+      button1.appendChild(btnText);
       cardSpace.appendChild(button1);
    }   
    
