@@ -36,8 +36,10 @@
          <tr>
 <!--Parking Space 1-->
          <td style="text-align:center" style="width:300px" height="200">1     
-            <button type="button" onclick="bookHandling()"> BOOK </button>
+            <button type="button" value="Add" onclick="bookHandling1()"> BOOK </button>
             <canvas id="space1" width="200" height="100"></canvas>
+            <form id=book1>
+            </form>
          </td>
 <!--Middle Space-->   
          <td rowspan="3" style="width:200px"></td>
@@ -139,7 +141,21 @@
   
   bookHandling1=function(){
     handleBook1();
+    creditCode1();
   }
+   
+   function creditCode1(){
+      var creditCard = document.createElement("input");
+      
+      element.setAttribute("name", type);
+      element.setAttribute("value", type);
+      
+      var cardSpace = document.getElementById("book1");
+      
+      document.getElementById("book1").innerHTML = "Please enter your credit card number"
+      
+      cardSpace.appendChild(creditCard);
+   }   
    
   function handleBook1(){
     $.ajax({
