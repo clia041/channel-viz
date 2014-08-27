@@ -36,9 +36,10 @@
          <tr>
 <!--Parking Space 1-->
          <td style="text-align:center" style="width:300px" height="200">1     
-            <button type="button" value="Add" name="element" onclick="bookHandling1()"> BOOK </button>
+            <button type="button" value="Add" name="element1" onclick="bookHandling1()"> BOOK </button>
             <canvas id="space1" width="200" height="100"></canvas>
             <form id=book1>
+               <button type="button" value="Add" name="element2" onclick="saveCode()"> SUBMIT </button>
             </form>
          </td>
 <!--Middle Space-->   
@@ -144,24 +145,31 @@
     creditCode1();
   }
    
-   function creditCode1(type, e){
+   function creditCode1(type){
       var element1 = document.createElement("input");
-      var key=e.keyCode || e.which;
+      var element2 = document.createElement("input");
       
       element1.setAttribute("type", type);
       element1.setAttribute("name", type);
       element1.setAttribute("value", type);
       
+      element2.setAttribute("type", type);
+      element2.setAttribute("name", type);
+      element2.setAttribute("value", type);
+      
       var cardSpace = document.getElementById("book1");
+      var submitButton = document.getElementById("book1");
       
       document.getElementById("book1").innerHTML = "Please enter your credit card number"
-      cardSpace.appendChild(element);
-      
-      if (key==13){
-         document.getElementById("book1").innerHTML = "Thank you"
-      }
+      cardSpace.appendChild(element1);
+      submitButton.appendChild(element2)
+   
    }   
    
+   
+   function saveCode(){
+      alert('code saved');
+   }
   function handleBook1(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
