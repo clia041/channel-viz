@@ -145,17 +145,21 @@
   }
    
    function creditCode1(type){
-      var element = document.createElement("input");
+      var element1 = document.createElement("input");
+      var key=e.keyCode || e.which;
       
-     element.setAttribute("type", type);
-      element.setAttribute("name", type);
-      element.setAttribute("value", type);
+      element1.setAttribute("type", type);
+      element1.setAttribute("name", type);
+      element1.setAttribute("value", type);
       
       var cardSpace = document.getElementById("book1");
       
       document.getElementById("book1").innerHTML = "Please enter your credit card number"
-      
       cardSpace.appendChild(element);
+      
+      if (key==13){
+         document.getElementById("book1").innerHTML = "Thank you"
+      }
    }   
    
   function handleBook1(){
