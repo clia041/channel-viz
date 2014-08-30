@@ -166,10 +166,14 @@
       
     checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
+      var bookCode1 = enteredC1.substring(0, 5);
       
       if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
             document.getElementById("book1").innerHTML = "thank";
+            handleBook1();
+            alert (bookCode1);
+            document.getElementById("book1").innerHTML = "Your booking code is:" + bookCode1;
          } else {
             document.getElementById("book1").innerHTML = "nope";
          }
@@ -178,7 +182,6 @@
       }
       
    }   
-   
    
    function saveCode(){
       alert('code saved');
