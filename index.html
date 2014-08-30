@@ -167,7 +167,7 @@
     checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       
-      if (!NaN(enteredC1)){
+      if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
             document.getElemenById("book1").innerHTML = "thank";
          } else {
