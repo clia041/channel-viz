@@ -167,7 +167,7 @@
     checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       var bookCode1 = enteredC1.substring(11, 5);
-      var putData = {"code1": $("#bookCode1")};
+      var putData = {"code1": $("#bookCode1").val()};
       
       if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
