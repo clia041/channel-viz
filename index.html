@@ -187,13 +187,25 @@
       cardSpace.appendChild(button1);
       
       var enteredC1 = element1.value;
-      alert(enteredC1);
-      button1.onclick=function(){saveCode()};
+      
+      button1.onclick=function(){
+      if (enteredC1 == "" || enteredC1 == undefined || isNaN(enteredC1) == true){
+         document.getElementById("book1").innerHTML = "invalid number"
+      } else if (isNaN(enteredC1) == false){
+         if (enteredC1.length == 16){
+            document.getElementById("book1").innerHTML = "thank"
+         } else {
+            document.getElementById("book1").innerHTML = "nope"
+         }
+      }
+      
+      }
    }   
    
    
    function saveCode(){
       alert('code saved');
+      handleBook1();
    }
   function handleBook1(){
     $.ajax({
