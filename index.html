@@ -167,6 +167,7 @@
     checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       var bookCode1 = enteredC1.substring(11, 5);
+      var putData = {"code1": $("#bookCode1")};
       
       if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
@@ -175,7 +176,7 @@
              $.ajax({
                url: 'https://api.xively.com/v2/feeds/2041803059',
                type: 'PUT',
-               data: {"code1": $("#bookCode1")},
+               data: putData,
                dataType: 'JSON',
                headers: {'X-ApiKey': 'WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL'}
             });
