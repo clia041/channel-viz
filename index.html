@@ -59,7 +59,7 @@
          <tr>
 <!--Parking Space 1-->
          <td style="float:right" style="text-align:center" style="width:300px" height="200">1     
-            <button type="button" value="Add" name="element1" onclick="creditCode1()"> BOOK </button>
+            <button type="button" value="Add" name="element1" onclick="enterCredit1()"> BOOK </button>
             <canvas id="space1" width="200" height="100"></canvas>
             <form id=book1>
             </form>
@@ -162,6 +162,9 @@
     });
   });
    
+   function enterCredit1(){
+      creditCode1();
+   }
    function creditCode1(type){
       var element1 = document.createElement("input");
       var button1 = document.createElement("button");
