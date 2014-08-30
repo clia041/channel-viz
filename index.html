@@ -188,19 +188,23 @@
       
       var enteredC1 = element1.value;
       
-      button1.onclick=function(){
-         alert(enteredC1);
-      if (!isNaN(enteredC1)){
-         if (enteredC1.length == 16){
-            document.getElementById("book1").innerHTML = "thank"
-         } else {
-            document.getElementById("book1").innerHTML = "nope"
-         }
-      } else{
-         document.getElementById("book1").innerHTML = "invalid"
-      }
+      $(button1).click(function(){
+         $(enteredC1).html($('input:textbox').val());
+      });
       
-      }
+      //button1.onclick=function(){
+        // alert(enteredC1);
+      //if (!isNaN(enteredC1)){
+        // if (enteredC1.length == 16){
+         //   document.getElementById("book1").innerHTML = "thank"
+         //} else {
+          //  document.getElementById("book1").innerHTML = "nope"
+         //}
+      //} else{
+       //  document.getElementById("book1").innerHTML = "invalid"
+      //}
+      
+      //}
    }   
    
    
