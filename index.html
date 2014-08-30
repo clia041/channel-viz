@@ -62,6 +62,7 @@
             <button type="button" name="element1" onclick="enterCredit1()"> BOOK </button>
             <canvas id="space1" width="200" height="100"></canvas>
             <form id=book1>
+               <label id="msg"></label>
             </form>
          </td>
 <!--Middle Space-->   
@@ -189,7 +190,7 @@
       var enteredC1 = element1.value;
       
       $(button1).click(function(){
-         $(enteredC1).html($('input:textbox').val());
+         $('#msg').html($('input:textbox').val());
       });
       
       //button1.onclick=function(){
