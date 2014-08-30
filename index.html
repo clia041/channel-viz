@@ -174,7 +174,8 @@
       
       //element1.setAttribute("type", type);
       //element1.setAttribute("name", type);
-      element1.setAttribute("value", element1.value);
+      //element1.setAttribute("value", element1.value);
+      element1.ID = "hello1";
       
       //button1.setAttribute("type", type);
       //button1.setAttribute("name", type);
@@ -187,25 +188,21 @@
       button1.appendChild(btnText);
       cardSpace.appendChild(button1);
       
-      var enteredC1 = element1.value;
+      var enteredC1 = document.getElementByID("hello1").value;
       
-      $("button1").click(function(){
-         $('#msg').html($('input:textbox').val());
-      });
+      button1.onclick=function(){
+         alert(enteredC1);
+      if (!isNaN(enteredC1)){
+         if (enteredC1.length == 16){
+            document.getElementById("book1").innerHTML = "thank"
+         } else {
+            document.getElementById("book1").innerHTML = "nope"
+         }
+      } else{
+         document.getElementById("book1").innerHTML = "invalid"
+      }
       
-      //button1.onclick=function(){
-        // alert(enteredC1);
-      //if (!isNaN(enteredC1)){
-        // if (enteredC1.length == 16){
-         //   document.getElementById("book1").innerHTML = "thank"
-         //} else {
-          //  document.getElementById("book1").innerHTML = "nope"
-         //}
-      //} else{
-       //  document.getElementById("book1").innerHTML = "invalid"
-      //}
-      
-      //}
+      }
    }   
    
    
