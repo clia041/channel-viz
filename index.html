@@ -189,14 +189,14 @@
       var enteredC1 = element1.value;
       
       button1.onclick=function(){
-      if (enteredC1 == "" || enteredC1 == undefined || isNaN(enteredC1)){
-         document.getElementById("book1").innerHTML = "invalid number"
-      } else if (!isNaN(enteredC1)){
+      if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
             document.getElementById("book1").innerHTML = "thank"
          } else {
             document.getElementById("book1").innerHTML = "nope"
          }
+      } else{
+         document.getElementById("book1").innerHTML = "invalid"
       }
       
       }
