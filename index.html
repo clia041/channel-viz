@@ -268,19 +268,19 @@
 //STATUS DISPLAY FOR SPACE 2  
    xively.datastream.get (feedID, datastreamID2, function ( datastream ){
       if (datastream["current_value"] == '0'){
-         f2tx.clearRect(0,0,space1.width,space2.height);
+         f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("FREE",36,50);
         
       }else if(datastream["current_value"] == '1') {
-         f2tx.clearRect(0,0,space1.width,space2.height);
+         f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("TAKEN",36,50);
            
       }else if(datastream["current_value"] == '2'){
-         f2tx.clearRect(0,0,space1.width,space2.height);
+         f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("BOOKED",36,50);
@@ -288,25 +288,221 @@
 //UPDATE STATUS DISPLAY FOR SPACE 2
    xively.datastream.subscribe( feedID, datastreamID2, function ( event , datastream_updated ){
       if (datastream_updated["current_value"] == '0'){
-         f2tx.clearRect(0,0,space1.width,space2.height);
+         f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("FREE",36,50);
         
       }else if(datastream_updated["current_value"] == '1') {
-         f2tx.clearRect(0,0,space1.width,space2.height);
+         f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("TAKEN",36,50);  
            
       }else if(datastream_updated["current_value"] == '2'){
-         f2tx.clearRect(0,0,space1.width,space2.height);
+         f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("BOOKED",36,50);
       }
    });
    });
+   
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 3
+   xively.datastream.get (feedID, datastreamID3, function ( datastream ){
+      if (datastream["current_value"] == '0'){
+         f3tx.clearRect(0,0,space3.width,space3.height);
+         f3tx.font = "50px Arial";
+         f3tx.strokeStyle="rgb(154,205,50)";
+         f3tx.strokeText("FREE",36,50);
+        
+      }else if(datastream["current_value"] == '1') {
+         f3tx.clearRect(0,0,space3.width,space3.height);
+         f3tx.font = "50px Arial";
+         f3tx.strokeStyle="rgb(154,205,50)";
+         f3tx.strokeText("TAKEN",36,50);
+           
+      }else if(datastream["current_value"] == '2'){
+         f3tx.clearRect(0,0,space3.width,space3.height);
+         f3tx.font = "50px Arial";
+         f3tx.strokeStyle="rgb(154,205,50)";
+         f3tx.strokeText("BOOKED",36,50);
+     };
+//UPDATE STATUS DISPLAY FOR SPACE 3
+   xively.datastream.subscribe( feedID, datastreamID3, function ( event , datastream_updated ){
+      if (datastream_updated["current_value"] == '0'){
+         f3tx.clearRect(0,0,space3.width,space3.height);
+         f3tx.font = "50px Arial";
+         f3tx.strokeStyle="rgb(154,205,50)";
+         f3tx.strokeText("FREE",36,50);
+        
+      }else if(datastream_updated["current_value"] == '1') {
+         f3tx.clearRect(0,0,space3.width,space3.height);
+         f3tx.font = "50px Arial";
+         f3tx.strokeStyle="rgb(154,205,50)";
+         f3tx.strokeText("TAKEN",36,50);  
+           
+      }else if(datastream_updated["current_value"] == '2'){
+         f3tx.clearRect(0,0,space3.width,space3.height);
+         f3tx.font = "50px Arial";
+         f3tx.strokeStyle="rgb(154,205,50)";
+         f3tx.strokeText("BOOKED",36,50);
+      }
+   });
+   });
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 4
+   xively.datastream.get (feedID, datastreamID4, function ( datastream ){
+      if (datastream["current_value"] == '0'){
+         f4tx.clearRect(0,0,space4.width,space4.height);
+         f4tx.font = "50px Arial";
+         f4tx.strokeStyle="rgb(154,205,50)";
+         f4tx.strokeText("FREE",36,50);
+        
+      }else if(datastream["current_value"] == '1') {
+         f4tx.clearRect(0,0,space4.width,space4.height);
+         f4tx.font = "50px Arial";
+         f4tx.strokeStyle="rgb(154,205,50)";
+         f4tx.strokeText("TAKEN",36,50);
+           
+      }else if(datastream["current_value"] == '2'){
+         f4tx.clearRect(0,0,space4.width,space4.height);
+         f4tx.font = "50px Arial";
+         f4tx.strokeStyle="rgb(154,205,50)";
+         f4tx.strokeText("BOOKED",36,50);
+     };
+//UPDATE STATUS DISPLAY FOR SPACE 4
+   xively.datastream.subscribe( feedID, datastreamID4, function ( event , datastream_updated ){
+      if (datastream_updated["current_value"] == '0'){
+         f4tx.clearRect(0,0,space4.width,space4.height);
+         f4tx.font = "50px Arial";
+         f4tx.strokeStyle="rgb(154,205,50)";
+         f4tx.strokeText("FREE",36,50);
+        
+      }else if(datastream_updated["current_value"] == '1') {
+         f4tx.clearRect(0,0,space4.width,space4.height);
+         f4tx.font = "50px Arial";
+         f4tx.strokeStyle="rgb(154,205,50)";
+         f4tx.strokeText("TAKEN",36,50);  
+           
+      }else if(datastream_updated["current_value"] == '2'){
+         f4tx.clearRect(0,0,space4.width,space4.height);
+         f4tx.font = "50px Arial";
+         f4tx.strokeStyle="rgb(154,205,50)";
+         f4tx.strokeText("BOOKED",36,50);
+      }
+   });
+   });
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 5
+   xively.datastream.get (feedID, datastreamID5, function ( datastream ){
+      if (datastream["current_value"] == '0'){
+         f5tx.clearRect(0,0,space5.width,space5.height);
+         f5tx.font = "50px Arial";
+         f5tx.strokeStyle="rgb(154,205,50)";
+         f5tx.strokeText("FREE",36,50);
+        
+      }else if(datastream["current_value"] == '1') {
+         f5tx.clearRect(0,0,space5.width,space5.height);
+         f5tx.font = "50px Arial";
+         f5tx.strokeStyle="rgb(154,205,50)";
+         f5tx.strokeText("TAKEN",36,50);
+           
+      }else if(datastream["current_value"] == '2'){
+         f5tx.clearRect(0,0,space5.width,space5.height);
+         f5tx.font = "50px Arial";
+         f5tx.strokeStyle="rgb(154,205,50)";
+         f5tx.strokeText("BOOKED",36,50);
+     };
+//UPDATE STATUS DISPLAY FOR SPACE 5
+   xively.datastream.subscribe( feedID, datastreamID5, function ( event , datastream_updated ){
+      if (datastream_updated["current_value"] == '0'){
+         f5tx.clearRect(0,0,space5.width,space5.height);
+         f5tx.font = "50px Arial";
+         f5tx.strokeStyle="rgb(154,205,50)";
+         f5tx.strokeText("FREE",36,50);
+        
+      }else if(datastream_updated["current_value"] == '1') {
+         f5tx.clearRect(0,0,space5.width,space5.height);
+         f5tx.font = "50px Arial";
+         f5tx.strokeStyle="rgb(154,205,50)";
+         f5tx.strokeText("TAKEN",36,50);  
+           
+      }else if(datastream_updated["current_value"] == '2'){
+         f5tx.clearRect(0,0,space5.width,space5.height);
+         f5tx.font = "50px Arial";
+         f5tx.strokeStyle="rgb(154,205,50)";
+         f5tx.strokeText("BOOKED",36,50);
+      }
+   });
+   });
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 6
+   xively.datastream.get (feedID, datastreamID6, function ( datastream ){
+      if (datastream["current_value"] == '0'){
+         f6tx.clearRect(0,0,space3.width,space3.height);
+         f6tx.font = "50px Arial";
+         f6tx.strokeStyle="rgb(154,205,50)";
+         f6tx.strokeText("FREE",36,50);
+        
+      }else if(datastream["current_value"] == '1') {
+         f6tx.clearRect(0,0,space3.width,space3.height);
+         f6tx.font = "50px Arial";
+         f6tx.strokeStyle="rgb(154,205,50)";
+         f6tx.strokeText("TAKEN",36,50);
+           
+      }else if(datastream["current_value"] == '2'){
+         f6tx.clearRect(0,0,space3.width,space3.height);
+         f6tx.font = "50px Arial";
+         f6tx.strokeStyle="rgb(154,205,50)";
+         f6tx.strokeText("BOOKED",36,50);
+     };
+//UPDATE STATUS DISPLAY FOR SPACE 6
+   xively.datastream.subscribe( feedID, datastreamID6, function ( event , datastream_updated ){
+      if (datastream_updated["current_value"] == '0'){
+         f6tx.clearRect(0,0,space3.width,space3.height);
+         f6tx.font = "50px Arial";
+         f6tx.strokeStyle="rgb(154,205,50)";
+         f6tx.strokeText("FREE",36,50);
+        
+      }else if(datastream_updated["current_value"] == '1') {
+         f6tx.clearRect(0,0,space3.width,space3.height);
+         f6tx.font = "50px Arial";
+         f6tx.strokeStyle="rgb(154,205,50)";
+         f6tx.strokeText("TAKEN",36,50);  
+           
+      }else if(datastream_updated["current_value"] == '2'){
+         f6tx.clearRect(0,0,space3.width,space3.height);
+         f6tx.font = "50px Arial";
+         f6tx.strokeStyle="rgb(154,205,50)";
+         f6tx.strokeText("BOOKED",36,50);
+      }
+   });
+   });
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 7
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 8
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 9
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 10
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 11
+
+//-------------------------------------------------------------------------------------------------------------
+//STATUS DISPLAY FOR SPACE 12
+
+
    
 
    checkCredit1=function(){
