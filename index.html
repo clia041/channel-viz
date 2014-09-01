@@ -154,7 +154,7 @@
         b1tx.strokeText("BOOKED",35,50);
       };
       
-      
+  }
       
     xively.datastream.subscribe( feedID, datastream1ID, function ( event , datastream_updated ){
         
@@ -186,8 +186,8 @@
         b1tx.strokeText("BOOKED",36,50);
       };
       
-      
-   xively.datastream.get (feedID, datastream1ID, function ( datastream ){
+    } 
+   xively.datastream.get (feedID, datastream4ID, function ( datastream ){
     
        if (datastream["current_value"] == '0'){
         var f1=document.getElementById("space4");
@@ -216,10 +216,9 @@
         b1tx.strokeStyle="rgb(154,205,50)";
         b1tx.strokeText("BOOKED",35,50);
       };
+   }
       
-      
-      
-    xively.datastream.subscribe( feedID, datastream1ID, function ( event , datastream_updated ){
+    xively.datastream.subscribe( feedID, datastream4ID, function ( event , datastream_updated ){
         
       if (datastream_updated["current_value"] == '0'){
         var f1=document.getElementById("space4");
@@ -247,7 +246,9 @@
         b1tx.font = "50px Arial";
         b1tx.strokeStyle="rgb(154,205,50)";
         b1tx.strokeText("BOOKED",36,50);
-      };   
+      };
+      
+    }
       
       
       confirmCode1=function(){
@@ -278,8 +279,6 @@
                { "id" : "code1", "datapoints" : [ {"at" : timestamp, "value" : bookCode1} ] }
                 ]
             };
-            
-            
       
       if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
