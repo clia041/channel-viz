@@ -238,7 +238,6 @@
       
       xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
   
-  
       var f1=document.getElementById("space1"), f1tx=f1.getContext("2d"), f2=document.getElementById("space2"), f2tx=f2.getContext("2d"),
           f3=document.getElementById("space3"), f3tx=f3.getContext("2d"), f4=document.getElementById("space4"), f4tx=f4.getContext("2d"),
           f5=document.getElementById("space5"), f5tx=f5.getContext("2d"), f6=document.getElementById("space6"), f6tx=f6.getContext("2d"),
@@ -831,6 +830,8 @@
       xively.setKey(API_KEYc);
       
       xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
+         alert (datastream["current_value"]);
+         alert (enteredCC1);
          if (datastream["current_value"] == enteredCC1){
             document.getElementById("codeEnter1").innerHTML = "thank you very much";
             bookToTaken();
