@@ -250,22 +250,6 @@
     });
    });
       
-      
-      confirmCode1=function(){
-        var enteredC = document.getElementById("codeEnter1").value;
-         
-        if(datastream_updated["current_value"] == '2'){
-          if (enteredC == code1){
-            bookToTaken1();
-            document.getElementById("bookConfirmed").innerHTML="TY :)";
-          }else{
-            document.getElementById("bookConfirmed").innerHTML="WRONG CODE :(";
-          };
-        };
-      }
-    });
-  });
-      
     checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       var bookCode1 = enteredC1.substring(11, 5);
