@@ -881,7 +881,7 @@
          url: sensorURL,
          type: 'PUT',
          data: 'Sensor1,2',
-         headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+         headers: {'X-ApiKey': API_KEY}
       });
    }
   
@@ -1077,6 +1077,14 @@
     });
    }
    
+   function bookToTaken11(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor11,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
 //FUNCTIONS FOR HANDLING SPACE 12 
    function handleBook12(){
     $.ajax({
@@ -1086,37 +1094,8 @@
       headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
     });
    }
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  function bookToTaken11(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor11,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
-  
-  function bookToTaken12(){
+   
+   function bookToTaken12(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
       type: 'PUT',
@@ -1124,12 +1103,7 @@
       headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
     });
   }
-
 });
-
 </script>
-   
-
- 
 </body>
 </html>
