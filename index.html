@@ -796,25 +796,34 @@
       var API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL";
       var FEED_IDc = "2041803059";
       
-      xively.setKey(API_KEYc);
-      var timestamp = new Date().toISOString();
-      var data = { "version" : "1.0.0",
-            "datastreams" : [
-               { "id" : "code1", "datapoints" : [ {"at" : timestamp, "value" : bookCode1} ] } ]};
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamcID1, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book1").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book1").innerHTML = "sorry this spot is already booked";
+         }else{
       
-      if (!isNaN(enteredC1)){
-         if (enteredC1.length == 16){
-            document.getElementById("book1").innerHTML = "thank";
-            handleBook1();
-            xively.feed.update(FEED_IDc, data, function(data){});
-            document.getElementById("book1").innerHTML = "Your booking code is:" + bookCode1;
-         } else {
-            document.getElementById("book1").innerHTML = "nope";
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code1", "datapoints" : [ {"at" : timestamp, "value" : bookCode1} ] } ]};
+               
+            if (!isNaN(enteredC1)){
+               if (enteredC1.length == 16){
+                  document.getElementById("book1").innerHTML = "thank";
+                  handleBook1();
+                  xively.feed.update(FEED_IDc, data, function(data){});
+                  document.getElementById("book1").innerHTML = "Your booking code is:" + bookCode1;
+               } else {
+                  document.getElementById("book1").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book1").innerHTML = "invalid";
+            }
          }
-      }else{
-         document.getElemenById("book1").innerHTML = "invalid";
-      }
-   }   
+      });
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 2 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING   
 
@@ -854,8 +863,6 @@
       
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
-         alert (enteredCC1);
-         
          if (datastream["current_value"] === enteredCC1){
             document.getElementById("codeEnter1").innerHTML = "thank you very much";
             bookToTaken();
