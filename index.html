@@ -798,7 +798,7 @@
       var FEED_IDc = "2041803059";
       
       xively.setKey(API_KEY);
-      xively.datastream.get (feedID, datastreamcID1, function ( datastream ){
+      xively.datastream.get (feedID, datastreamID1, function ( datastream ){
          if (datastream["current_value"]=='1'){
             document.getElementById("book1").innerHTML = "sorry this spot is already taken";
          }else if (datastream["current_value"]=='2'){
