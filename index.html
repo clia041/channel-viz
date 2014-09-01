@@ -830,17 +830,182 @@
       });
    }
 //-------------------------------------------------------------------------------------------------------------
-//SPACE 2 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING   
+//SPACE 2 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING
+   checkCredit2=function(){
+      var enteredC2 = document.getElementById("hello2").value;
+      var bookCode2 = enteredC2.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID2, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book2").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book2").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code2", "datapoints" : [ {"at" : timestamp, "value" : bookCode2} ] } ]};
+               
+            if (!isNaN(enteredC2)){
+               if (enteredC3.length == 16){
+                  document.getElementById("book2").innerHTML = "thanks";
+                  handleBook2();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book2").innerHTML = "Your booking code is:" + bookCode2;
+               } else {
+                  document.getElementById("book2").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book2").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 3 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit3=function(){
+      var enteredC3 = document.getElementById("hello3").value;
+      var bookCode3 = enteredC3.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID3, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book3").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book3").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code3", "datapoints" : [ {"at" : timestamp, "value" : bookCode3} ] } ]};
+               
+            if (!isNaN(enteredC3)){
+               if (enteredC3.length == 16){
+                  document.getElementById("book3").innerHTML = "thanks";
+                  handleBook3();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book3").innerHTML = "Your booking code is:" + bookCode3;
+               } else {
+                  document.getElementById("book3").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book3").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 4 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit4=function(){
+      var enteredC4 = document.getElementById("hello4").value;
+      var bookCode4 = enteredC4.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID4, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book4").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book4").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code4", "datapoints" : [ {"at" : timestamp, "value" : bookCode4} ] } ]};
+               
+            if (!isNaN(enteredC4)){
+               if (enteredC4.length == 16){
+                  document.getElementById("book4").innerHTML = "thanks";
+                  handleBook4();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book4").innerHTML = "Your booking code is:" + bookCode4;
+               } else {
+                  document.getElementById("book4").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book4").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
-//SPACE 5 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//SPACE 5 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING
+   checkCredit5=function(){
+      var enteredC5 = document.getElementById("hello5").value;
+      var bookCode5 = enteredC5.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID5, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book5").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book5").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code5", "datapoints" : [ {"at" : timestamp, "value" : bookCode5} ] } ]};
+               
+            if (!isNaN(enteredC5)){
+               if (enteredC5.length == 16){
+                  document.getElementById("book5").innerHTML = "thanks";
+                  handleBook5();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book5").innerHTML = "Your booking code is:" + bookCode5;
+               } else {
+                  document.getElementById("book5").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book5").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 6 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit6=function(){
+      var enteredC6 = document.getElementById("hello6").value;
+      var bookCode6 = enteredC6.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID6, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book6").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book6").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code6", "datapoints" : [ {"at" : timestamp, "value" : bookCode6} ] } ]};
+               
+            if (!isNaN(enteredC6)){
+               if (enteredC6.length == 16){
+                  document.getElementById("book6").innerHTML = "thanks";
+                  handleBook6();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book6").innerHTML = "Your booking code is:" + bookCode6;
+               } else {
+                  document.getElementById("book6").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book6").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 7 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
 //-------------------------------------------------------------------------------------------------------------
@@ -857,7 +1022,7 @@
 
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------
-//
+//CONFIRMING THE ENTERED CODE FOR SPACE 1
 
    confirmCode1=function(){
       var enteredCC1 = document.getElementById("codeE1").value,
@@ -875,6 +1040,32 @@
       });
    }
    
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 2
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 3
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 4
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 5
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 6
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 7
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 8
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 9
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 10
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 11
+//-------------------------------------------------------------------------------------------------------------
+//CONFIRMING THE ENTERED CODE FOR SPACE 12
+   
+   
+//-------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------   
 //FUNCTIONS FOR HANDLING SPACE 1
    function handleBook1(){
       $.ajax({
@@ -896,10 +1087,10 @@
   
   function clearCode1(){
      $.ajax({
-      url: 'https://api.xively.com/v2/feeds/2041803059.csv',
+      url: codeURL,
       type: 'PUT',
       data: 'code1,0',
-      headers: {'X-ApiKey': 'WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL'}
+      headers: {'X-ApiKey': API_KEYc}
     });
   }
   
@@ -921,6 +1112,15 @@
       headers: {'X-ApiKey': API_KEY}
     });
   }
+  
+  function clearCode2(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code2,0',
+      headers: {'X-ApiKey': API_KEYc}
+    });
+  }
 //FUNCTIONS FOR HANDLING SPACE 3   
    function handleBook3(){
     $.ajax({
@@ -937,6 +1137,15 @@
       type: 'PUT',
       data: 'Sensor3,1',
       headers: {'X-ApiKey': API_KEY}
+    });
+  }
+  
+  function clearCode3(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code3,0',
+      headers: {'X-ApiKey': API_KEYc}
     });
   }
  //FUNCTIONS FOR HANDLING SPACE 4 
@@ -957,6 +1166,15 @@
       headers: {'X-ApiKey': API_KEY}
     });
   }
+  
+  function clearCode4(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code4,0',
+      headers: {'X-ApiKey': API_KEYc}
+    });
+  }
 //FUNCTIONS FOR HANDLING SPACE 5   
    function handleBook5(){
     $.ajax({
@@ -973,6 +1191,15 @@
       type: 'PUT',
       data: 'Sensor5,1',
       headers: {'X-ApiKey': API_KEY}
+    });
+  }
+  
+  function clearCode5(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code5,0',
+      headers: {'X-ApiKey': API_KEYc}
     });
   }
 //FUNCTIONS FOR HANDLING SPACE 6   
@@ -993,6 +1220,15 @@
       headers: {'X-ApiKey': API_KEY}
     });
   }
+  
+  function clearCode6(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code6,0',
+      headers: {'X-ApiKey': API_KEYc}
+    });
+  }
 //FUNCTIONS FOR HANDLING SPACE 7   
    function handleBook7(){
     $.ajax({
@@ -1009,6 +1245,15 @@
       type: 'PUT',
       data: 'Sensor7,1',
       headers: {'X-ApiKey': API_KEY}
+    });
+  }
+  
+  function clearCode7(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code7,0',
+      headers: {'X-ApiKey': API_KEYc}
     });
   }
 //FUNCTIONS FOR HANDLING SPACE 8   
@@ -1029,6 +1274,15 @@
       headers: {'X-ApiKey': API_KEY}
     });
   }
+  
+  function clearCode8(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code8,0',
+      headers: {'X-ApiKey': API_KEYc}
+    });
+  }
 //FUNCTIONS FOR HANDLING SPACE 9   
    function handleBook9(){
     $.ajax({
@@ -1045,6 +1299,15 @@
       type: 'PUT',
       data: 'Sensor9,1',
       headers: {'X-ApiKey': API_KEY}
+    });
+  }
+  
+  function clearCode9(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code9,0',
+      headers: {'X-ApiKey': API_KEYc}
     });
   }
    
@@ -1067,6 +1330,15 @@
     });
   }
   
+  function clearCode10(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code10,0',
+      headers: {'X-ApiKey': API_KEYc}
+    });
+  }
+  
 //FUNCTIONS FOR HANDLING SPACE 11  
    function handleBook11(){
     $.ajax({
@@ -1085,6 +1357,15 @@
       headers: {'X-ApiKey': API_KEY}
     });
   }
+  
+  function clearCode11(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code11,0',
+      headers: {'X-ApiKey': API_KEYc}
+    });
+  }
 //FUNCTIONS FOR HANDLING SPACE 12 
    function handleBook12(){
     $.ajax({
@@ -1101,6 +1382,15 @@
       type: 'PUT',
       data: 'Sensor12,1',
       headers: {'X-ApiKey': API_KEY}
+    });
+  }
+  
+  function clearCode12(){
+     $.ajax({
+      url: codeURL,
+      type: 'PUT',
+      data: 'code12,0',
+      headers: {'X-ApiKey': API_KEYc}
     });
   }
 });
