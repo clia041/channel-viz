@@ -141,7 +141,8 @@
    $(document).ready(function($) {
   
   var feedID        = 1868918819,  
-      datastreamID = ["Sensor1","Sensor2","Sensor3","Sensor4","Sensor5","Sensor6","Sensor7","Sensor8","Sensor9","Sensor10","Sensor11","Sensor12",]
+      datastreamID = ["Sensor1","Sensor2","Sensor3","Sensor4","Sensor5","Sensor6",
+                        "Sensor7","Sensor8","Sensor9","Sensor10","Sensor11","Sensor12",],
       
   xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
   
@@ -150,29 +151,7 @@
   xively.datastream.get (feedID, datastreamID[i], function ( datastream ){
     
        if (datastream["current_value"] == '0'){
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         var f1=document.getElementById("space1");
-         var f1tx=f1.getContext("2d");
-         
+         var f1=document.getElementById("space1"), f1tx=f1.getContext("2d");
          
         f1tx.clearRect(0,0,space1.width,space1.height);
         f1tx.font = "50px Arial";
