@@ -231,12 +231,13 @@
 
 <script>
    $(document).ready(function($) {
-      var feedID        = 1868918819,  
+      var feedID  = 1868918819,  
+          API_KEY = "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr";
       datastreamID1 = "Sensor1", datastreamID2 = "Sensor2", datastreamID3 = "Sensor3", datastreamID4 = "Sensor4",
       datastreamID5 = "Sensor5", datastreamID6 = "Sensor6", datastreamID7 = "Sensor7", datastreamID8 = "Sensor8",
       datastreamID9 = "Sensor9", datastreamID10 = "Sensor10", datastreamID11 = "Sensor11", datastreamID12 = "Sensor12";
       
-      xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
+      xively.setKey( PI_KEY);
   
       var f1=document.getElementById("space1"), f1tx=f1.getContext("2d"), f2=document.getElementById("space2"), f2tx=f2.getContext("2d"),
           f3=document.getElementById("space3"), f3tx=f3.getContext("2d"), f4=document.getElementById("space4"), f4tx=f4.getContext("2d"),
@@ -828,13 +829,13 @@
           datastreamcID1 = "code1"
       
       xively.setKey(API_KEYc);
-      
       xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
          alert (enteredCC1);
          
          if (datastream["current_value"] === enteredCC1){
             document.getElementById("codeEnter1").innerHTML = "thank you very much";
             bookToTaken();
+            clearCode1();
          }else{
             document.getElementById("codeEnter1").innerHTML = "entered wrong code, please try again";
          }
@@ -856,6 +857,15 @@
       type: 'PUT',
       data: 'Sensor1,1',
       headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+  
+  function clearCode1(){
+     $.ajax({
+      url: 'https://api.xively.com/v2/feeds/2041803059.csv',
+      type: 'PUT',
+      data: 'code1,0',
+      headers: {'X-ApiKey': 'WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL'}
     });
   }
   
