@@ -256,12 +256,17 @@
 <script>
    $(document).ready(function($) 
    {
+//GLOBAL VARIABLES
       var feedID  = 1868918819,  
           API_KEY = "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr";
-      datastreamID1 = "Sensor1", datastreamID2 = "Sensor2", datastreamID3 = "Sensor3", datastreamID4 = "Sensor4",
-      datastreamID5 = "Sensor5", datastreamID6 = "Sensor6", datastreamID7 = "Sensor7", datastreamID8 = "Sensor8",
-      datastreamID9 = "Sensor9", datastreamID10 = "Sensor10", datastreamID11 = "Sensor11", datastreamID12 = "Sensor12";
-      
+          datastreamID1 = "Sensor1", datastreamID2 = "Sensor2", datastreamID3 = "Sensor3", datastreamID4 = "Sensor4",
+          datastreamID5 = "Sensor5", datastreamID6 = "Sensor6", datastreamID7 = "Sensor7", datastreamID8 = "Sensor8",
+          datastreamID9 = "Sensor9", datastreamID10 = "Sensor10", datastreamID11 = "Sensor11", datastreamID12 = "Sensor12",
+          API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL",
+          feedIDc = "2041803059",
+          sensorURL = "https://api.xively.com/v2/feeds/1868918819.csv",
+          codeURL = "https://api.xively.com/v2/feeds/2041803059.csv"
+          
       xively.setKey( API_KEY);
   
       var f1=document.getElementById("space1"), f1tx=f1.getContext("2d"), f2=document.getElementById("space2"), f2tx=f2.getContext("2d"),
@@ -794,8 +799,6 @@
    checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       var bookCode1 = enteredC1.substring(16, 12);
-      var API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL";
-      var FEED_IDc = "2041803059";
       
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID1, function ( datastream ){
@@ -856,9 +859,6 @@
 //-------------------------------------------------------------------------------------------------------------
 //
 
-   var API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL",
-       feedIDc = "2041803059";
-       
    confirmCode1=function(){
       var enteredCC1 = document.getElementById("codeE1").value,
           datastreamcID1 = "code1"
@@ -867,7 +867,7 @@
       xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
          if (datastream["current_value"] === enteredCC1){
             document.getElementById("codeEnter1").innerHTML = "thank you very much";
-            bookToTaken();
+            bookToTaken1();
             clearCode1();
          }else{
             document.getElementById("codeEnter1").innerHTML = "entered wrong code, please try again";
@@ -875,18 +875,18 @@
       });
    }
    
-   var sensorURL = "https://api.xively.com/v2/feeds/1868918819.csv";   
-  function handleBook1(){
-    $.ajax({
-      url: sensorURL,
-      type: 'PUT',
-      data: 'Sensor1,2',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
+//FUNCTIONS FOR HANDLING SPACE 1
+   function handleBook1(){
+      $.ajax({
+         url: sensorURL,
+         type: 'PUT',
+         data: 'Sensor1,2',
+         headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+      });
+   }
   
-  function bookToTaken(){
-     $.ajax({
+   function bookToTaken1(){
+    $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
       type: 'PUT',
       data: 'Sensor1,1',
@@ -903,6 +903,7 @@
     });
   }
   
+//FUNCTIONS FOR HANDLING SPACE 2  
    function handleBook2(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -912,6 +913,15 @@
     });
    }
    
+   function bookToTaken2(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor2,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+//FUNCTIONS FOR HANDLING SPACE 3   
    function handleBook3(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -921,6 +931,15 @@
     });
    }
    
+   function bookToTaken3(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor3,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+ //FUNCTIONS FOR HANDLING SPACE 4 
    function handleBook4(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -930,6 +949,15 @@
     });
    }
    
+   function bookToTaken4(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor4,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+//FUNCTIONS FOR HANDLING SPACE 5   
    function handleBook5(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -939,6 +967,15 @@
     });
    }
    
+   function bookToTaken5(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor5,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+//FUNCTIONS FOR HANDLING SPACE 6   
    function handleBook6(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -948,6 +985,15 @@
     });
    }
    
+   function bookToTaken6(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor6,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+//FUNCTIONS FOR HANDLING SPACE 7   
    function handleBook7(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -957,6 +1003,15 @@
     });
    }
    
+   function bookToTaken7(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor7,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+//FUNCTIONS FOR HANDLING SPACE 8   
    function handleBook8(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -966,6 +1021,15 @@
     });
    }
    
+   function bookToTaken8(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor8,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+//FUNCTIONS FOR HANDLING SPACE 9   
    function handleBook9(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -975,6 +1039,16 @@
     });
    }
    
+   function bookToTaken9(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor9,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+   
+//FUNCTIONS FOR HANDLING SPACE 10   
    function handleBook10(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -984,6 +1058,16 @@
     });
    }
    
+   function bookToTaken10(){
+    $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor10,1',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+  
+//FUNCTIONS FOR HANDLING SPACE 11  
    function handleBook11(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -993,6 +1077,7 @@
     });
    }
    
+//FUNCTIONS FOR HANDLING SPACE 12 
    function handleBook12(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
@@ -1002,95 +1087,25 @@
     });
    }
       
-  function bookToTaken1(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor1,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken2(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor2,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken3(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor3,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken4(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor4,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken5(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor5,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken6(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor6,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken7(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor7,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken8(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor8,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken9(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor9,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
   
-  function bookToTaken10(){
-    $.ajax({
-      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
-      type: 'PUT',
-      data: 'Sensor10,1',
-      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
-    });
-  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   function bookToTaken11(){
     $.ajax({
