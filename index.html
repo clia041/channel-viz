@@ -109,15 +109,25 @@
 
           <tr>
 <!--Parking Space 3-->          
-            <td style="text-align:center" style="width:300px" height="200">3     
-               <button type="button" onclick="bookHandling()"> BOOK </button>
-               <canvas id="space3" width="200" height="100"></canvas>
-            </td>
-<!--Parking Space 6-->            
-            <td style="text-align:center" style="width:300px" height="200">6    
-               <button type="button" onclick="bookHandling()"> BOOK </button>
-               <canvas id="space6" width="200" height="100"></canvas>
-            </td>		
+            <td style="float:right" style="text-align:center" width="98%" height="200">3     
+            <button type="button"> BOOK </button>
+            <canvas id="space3" width="300" height="100"></canvas>
+            <form id=book3>
+               Please Enter your credit card number: <input type="text" id="hello3">
+               <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+            </form>
+         </td>
+<!--Middle Space-->   
+         <td rowspan="3" style="width:200px"></td>
+<!--Parking Space 6-->    
+         <td style="float:right" style="text-align:center" width="98%" height="200">6     
+            <button type="button"> BOOK </button>
+            <canvas id="space6" width="300" height="100"></canvas>
+            <form id=book6>
+               Please Enter your credit card number: <input type="text" id="hello6">
+               <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+            </form>
+         </td>
           </tr>
 
       </table>
