@@ -118,7 +118,6 @@
   xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
   
   xively.datastream.get (feedID, datastreamID, function ( datastream ){
-    $(selector1).html(datastream["current_value"]);
     
        if (datastream["current_value"] == '0'){
         var f1=document.getElementById("space1");
