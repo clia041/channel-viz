@@ -5,41 +5,35 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <!--Tab Title-->
       <title>Smarter Parking</title>
-      
+<!--CSS Style-->
       <style>
-      html{
-         background-image:url('http://imgur.com/XTvu5tk.jpg');
-         text-align: center;
-      }
-      
-      body{
-         text-align: center;
-         color: #fffaf0;
-      }
-      .content-wrapper{
-         margin: auto;
-         width: 70%;
-      }
-      
-      #content-wrapper{
-         background:#000000;
-         opacity:0.9;
+         html{
+            background-image:url('http://imgur.com/XTvu5tk.jpg');
+            text-align: center;
          }
-         
-      table {
-         border:3px solid white;
-         
-         margin: 0 auto;
+         body{
+            text-align: center;
+            color: #fffaf0;
          }
-         
-      td, th{
-            border: 3px solid white;
+         .content-wrapper{
+            margin: auto;
+            width: 70%;
          }
-         
-      table.level1{
-         table-layout: fixed;
-         margin-left:auto;
--        margin-right: auto;
+         #content-wrapper{
+            background:#000000;
+            opacity:0.9;
+            }
+         table {
+            border:3px solid white;
+            margin: 0 auto;
+            }
+         td, th{
+               border: 3px solid white;
+            }
+         table.level1{
+            table-layout: fixed;
+            margin-left:auto;
+   -        margin-right: auto;
          }
       </style>
    </head>
@@ -56,233 +50,221 @@
    <div id="content-wrapper">
    <div class="inner clearfix">
    <section id="main-content">
+   <h3><a name="LEVEL 1 PARKING"></a> LEVEL 1 PARKING</h3>
    
-      <h3><a name="LEVEL 1 PARKING"></a> LEVEL 1 PARKING</h3>
-      <table class="level1">
-             <tr>
-    <!--Parking Space 1-->
-             <td style="text-align:center">1    
-                <button type="button"> BOOK </button>
-                <canvas id="space1" width="300" height="100"></canvas>
-                <form id=book1>
-                   Please Enter your credit card number: <input type="text" id="hello1">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-    <!--Middle Space-->  
-             <td rowspan="3" style="width:200px"></td>
-    <!--Parking Space 4-->    
-             <td style="text-align:center">4    
-                <button type="button"> BOOK </button>
-                <canvas id="space4" width="300" height="100"></canvas>
-                <form id=book4>
-                   Please Enter your credit card number: <input type="text" id="hello4">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-             </tr>
+   <table class="level1">
+      <tr>
+<!--Parking Space 1-->
+      <td style="text-align:center">1    
+         <button type="button"> BOOK </button>
+         <canvas id="space1" width="300" height="100"></canvas>
+         <form id=book1>
+            Please Enter your credit card number: <input type="text" id="hello1">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+<!--Middle Space-->  
+      <td rowspan="3" style="width:200px"></td>
+<!--Parking Space 4-->    
+      <td style="text-align:center">4    
+         <button type="button"> BOOK </button>
+         <canvas id="space4" width="300" height="100"></canvas>
+         <form id=book4>
+            Please Enter your credit card number: <input type="text" id="hello4">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+      </tr>
      
-             <tr>
-    <!--Parking Space 2-->
-             <td style="text-align:center">2    
-                <button type="button"> BOOK </button>
-                <canvas id="space2" width="300" height="100"></canvas>
-                <form id=book2>
-                   Please Enter your credit card number: <input type="text" id="hello2">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-    <!--Middle Space-->  
- 
-    <!--Parking Space 5-->    
-             <td style="text-align:center">5    
-                <button type="button"> BOOK </button>
-                <canvas id="space5" width="300" height="100"></canvas>
-                <form id=book5>
-                   Please Enter your credit card number: <input type="text" id="hello5">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-             </tr>
+      <tr>
+<!--Parking Space 2-->
+      <td style="text-align:center">2    
+         <button type="button"> BOOK </button>
+         <canvas id="space2" width="300" height="100"></canvas>
+         <form id=book2>
+            Please Enter your credit card number: <input type="text" id="hello2">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+<!--Parking Space 5-->    
+      <td style="text-align:center">5    
+         <button type="button"> BOOK </button>
+         <canvas id="space5" width="300" height="100"></canvas>
+         <form id=book5>
+            Please Enter your credit card number: <input type="text" id="hello5">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+      </tr>
      
-              <tr>
-    <!--Parking Space 3-->          
-                <td style="text-align:center">3    
-                <button type="button"> BOOK </button>
-                <canvas id="space3" width="300" height="100"></canvas>
-                <form id=book3>
-                   Please Enter your credit card number: <input type="text" id="hello3">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-    <!--Middle Space-->  
- 
-    <!--Parking Space 6-->    
-             <td style="text-align:center">6    
-                <button type="button"> BOOK </button>
-                <canvas id="space6" width="300" height="100"></canvas>
-                <form id=book6>
-                   Please Enter your credit card number: <input type="text" id="hello6">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-          </tr>
+      <tr>
+<!--Parking Space 3-->          
+      <td style="text-align:center">3    
+         <button type="button"> BOOK </button>
+         <canvas id="space3" width="300" height="100"></canvas>
+         <form id=book3>
+            Please Enter your credit card number: <input type="text" id="hello3">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+<!--Parking Space 6-->    
+      <td style="text-align:center">6    
+         <button type="button"> BOOK </button>
+         <canvas id="space6" width="300" height="100"></canvas>
+         <form id=book6>
+            Please Enter your credit card number: <input type="text" id="hello6">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+      </tr>
      
-          </table>
-      </div>
-      </div>
+   </table>
+   </div>
+   </div>
       
-      <div id="content-wrapper">
+   <div id="content-wrapper">
    <div class="inner clearfix">
    <section id="main-content">
+   <h3><a name="LEVEL 2 PARKING"></a> LEVEL 2 PARKING</h3>
    
-      <h3><a name="LEVEL 2 PARKING"></a> LEVEL 2 PARKING</h3>
-      <table class="level2">
-             <tr>
-    <!--Parking Space 7-->
-             <td style="text-align:center">7    
-                <button type="button"> BOOK </button>
-                <canvas id="space7" width="300" height="100"></canvas>
-                <form id=book7>
-                   Please Enter your credit card number: <input type="text" id="hello7">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-    <!--Middle Space-->  
-             <td rowspan="3" style="width:200px"></td>
-    <!--Parking Space 10-->    
-             <td style="text-align:center">10    
-                <button type="button"> BOOK </button>
-                <canvas id="space10" width="300" height="100"></canvas>
-                <form id=book10>
-                   Please Enter your credit card number: <input type="text" id="hello10">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-             </tr>
+   <table class="level2">
+      <tr>
+<!--Parking Space 7-->
+      <td style="text-align:center">7    
+         <button type="button"> BOOK </button>
+         <canvas id="space7" width="300" height="100"></canvas>
+         <form id=book7>
+            Please Enter your credit card number: <input type="text" id="hello7">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+<!--Middle Space-->  
+      <td rowspan="3" style="width:200px"></td>
+<!--Parking Space 10-->    
+      <td style="text-align:center">10    
+         <button type="button"> BOOK </button>
+         <canvas id="space10" width="300" height="100"></canvas>
+         <form id=book10>
+            Please Enter your credit card number: <input type="text" id="hello10">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+      </tr>
      
-             <tr>
-    <!--Parking Space 8-->
-             <td style="text-align:center">8    
-                <button type="button"> BOOK </button>
-                <canvas id="space8" width="300" height="100"></canvas>
-                <form id=book8>
-                   Please Enter your credit card number: <input type="text" id="hello8">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-    <!--Middle Space-->  
- 
-    <!--Parking Space 11-->    
-             <td style="text-align:center">11    
-                <button type="button"> BOOK </button>
-                <canvas id="space11" width="300" height="100"></canvas>
-                <form id=book11>
-                   Please Enter your credit card number: <input type="text" id="hello11">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-             </tr>
+      <tr>
+<!--Parking Space 8-->
+      <td style="text-align:center">8    
+         <button type="button"> BOOK </button>
+         <canvas id="space8" width="300" height="100"></canvas>
+         <form id=book8>
+            Please Enter your credit card number: <input type="text" id="hello8">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+<!--Parking Space 11-->    
+      <td style="text-align:center">11    
+         <button type="button"> BOOK </button>
+         <canvas id="space11" width="300" height="100"></canvas>
+         <form id=book11>
+            Please Enter your credit card number: <input type="text" id="hello11">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+      </tr>
      
-              <tr>
-    <!--Parking Space 9-->          
-                <td style="text-align:center">9    
-                <button type="button"> BOOK </button>
-                <canvas id="space9" width="300" height="100"></canvas>
-                <form id=book9>
-                   Please Enter your credit card number: <input type="text" id="hello9">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-    <!--Middle Space-->  
- 
-    <!--Parking Space 12-->    
-             <td style="text-align:center">12    
-                <button type="button"> BOOK </button>
-                <canvas id="space12" width="300" height="100"></canvas>
-                <form id=book12>
-                   Please Enter your credit card number: <input type="text" id="hello12">
-                   <button type="button" onclick="checkCredit1()"> SUBMIT </button>
-                </form>
-             </td>
-          </tr>
+      <tr>
+<!--Parking Space 9-->          
+      <td style="text-align:center">9    
+         <button type="button"> BOOK </button>
+         <canvas id="space9" width="300" height="100"></canvas>
+         <form id=book9>
+            Please Enter your credit card number: <input type="text" id="hello9">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+<!--Parking Space 12-->    
+      <td style="text-align:center">12    
+         <button type="button"> BOOK </button>
+         <canvas id="space12" width="300" height="100"></canvas>
+         <form id=book12>
+            Please Enter your credit card number: <input type="text" id="hello12">
+            <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+         </form>
+      </td>
+      </tr>
      
-          </table>
-      </div>
-      </div>
-      
-      
-      
-      
-    </div>
+   </table>
+   </div>
+   /div>
+   </div>
    
-   <script src="js/jquery.js"></script>
-   <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
+<!-----------------------------------------------HTML----------------------------------------------------------->
+
+<!-------------------------------------------JAVASCRIPT--------------------------------------------------------->
+<script src="js/jquery.js"></script>
+<script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
    
-   <script>
-      
+<script>
    $(document).ready(function($) {
-  
-  var feedID        = 1868918819,  
+      var feedID        = 1868918819,  
       datastreamID1 = "Sensor1", datastreamID2 = "Sensor2", datastreamID3 = "Sensor3", datastreamID4 = "Sensor4",
       datastreamID5 = "Sensor5", datastreamID6 = "Sensor6", datastreamID7 = "Sensor7", datastreamID8 = "Sensor8",
       datastreamID9 = "Sensor9", datastreamID10 = "Sensor10", datastreamID11 = "Sensor11", datastreamID12 = "Sensor12";
       
-  xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
+      xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
   
   
-  var f1=document.getElementById("space1"), f1tx=f1.getContext("2d"), f2=document.getElementById("space2"), f2tx=f2.getContext("2d"),
-      f3=document.getElementById("space3"), f3tx=f3.getContext("2d"), f4=document.getElementById("space4"), f4tx=f4.getContext("2d"),
-      f5=document.getElementById("space5"), f5tx=f5.getContext("2d"), f6=document.getElementById("space6"), f6tx=f6.getContext("2d"),
-      f7=document.getElementById("space7"), f7tx=f7.getContext("2d"), f8=document.getElementById("space8"), f8tx=f8.getContext("2d"),
-      f9=document.getElementById("space9"), f9tx=f9.getContext("2d"), f10=document.getElementById("space10"), f10tx=f10.getContext("2d"),
-      f11=document.getElementById("space11"), f11tx=f11.getContext("2d"), f12=document.getElementById("space12"), f12tx=f12.getContext("2d");
+      var f1=document.getElementById("space1"), f1tx=f1.getContext("2d"), f2=document.getElementById("space2"), f2tx=f2.getContext("2d"),
+          f3=document.getElementById("space3"), f3tx=f3.getContext("2d"), f4=document.getElementById("space4"), f4tx=f4.getContext("2d"),
+          f5=document.getElementById("space5"), f5tx=f5.getContext("2d"), f6=document.getElementById("space6"), f6tx=f6.getContext("2d"),
+          f7=document.getElementById("space7"), f7tx=f7.getContext("2d"), f8=document.getElementById("space8"), f8tx=f8.getContext("2d"),
+          f9=document.getElementById("space9"), f9tx=f9.getContext("2d"), f10=document.getElementById("space10"), f10tx=f10.getContext("2d"),
+          f11=document.getElementById("space11"), f11tx=f11.getContext("2d"), f12=document.getElementById("space12"), f12tx=f12.getContext("2d");
   
    xively.datastream.get (feedID, datastreamID1, function ( datastream ){
-     if (datastream["current_value"] == '0'){
-        f1tx.clearRect(0,0,space1.width,space1.height);
-        f1tx.font = "50px Arial";
-        f1tx.strokeStyle="rgb(154,205,50)";
-        f1tx.strokeText("FREE",36,50);
-        
-     } else if(datastream["current_value"] == '1') {
-           f1tx.clearRect(0,0,space1.width,space1.height);
-           f1tx.font = "50px Arial";
-           f1tx.strokeStyle="rgb(154,205,50)";
-           f1tx.strokeText("TAKEN",36,50);
-           
-     } else if(datastream["current_value"] == '2'){
+      if (datastream["current_value"] == '0'){
          f1tx.clearRect(0,0,space1.width,space1.height);
-           f1tx.font = "50px Arial";
-           f1tx.strokeStyle="rgb(154,205,50)";
-           f1tx.strokeText("BOOKED",36,50);
+         f1tx.font = "50px Arial";
+         f1tx.strokeStyle="rgb(154,205,50)";
+         f1tx.strokeText("FREE",36,50);
+        
+      }else if(datastream["current_value"] == '1') {
+         f1tx.clearRect(0,0,space1.width,space1.height);
+         f1tx.font = "50px Arial";
+         f1tx.strokeStyle="rgb(154,205,50)";
+         f1tx.strokeText("TAKEN",36,50);
+           
+      }else if(datastream["current_value"] == '2'){
+         f1tx.clearRect(0,0,space1.width,space1.height);
+         f1tx.font = "50px Arial";
+         f1tx.strokeStyle="rgb(154,205,50)";
+         f1tx.strokeText("BOOKED",36,50);
      };
 
-    xively.datastream.subscribe( feedID, datastreamID1, function ( event , datastream_updated ){
+   xively.datastream.subscribe( feedID, datastreamID1, function ( event , datastream_updated ){
       if (datastream_updated["current_value"] == '0'){
-         
-        f1tx.clearRect(0,0,space1.width,space1.height);
-        f1tx.font = "50px Arial";
-        f1tx.strokeStyle="rgb(154,205,50)";
-        f1tx.strokeText("FREE",36,50);
-        
-      } else if(datastream_updated["current_value"] == '1') {
-           f1tx.clearRect(0,0,space1.width,space1.height);
-           f1tx.font = "50px Arial";
-           f1tx.strokeStyle="rgb(154,205,50)";
-           f1tx.strokeText("TAKEN",36,50);  
-           
-      } else if(datastream_updated["current_value"] == '2'){
          f1tx.clearRect(0,0,space1.width,space1.height);
-           f1tx.font = "50px Arial";
-           f1tx.strokeStyle="rgb(154,205,50)";
-           f1tx.strokeText("BOOKED",36,50);
+         f1tx.font = "50px Arial";
+         f1tx.strokeStyle="rgb(154,205,50)";
+         f1tx.strokeText("FREE",36,50);
+        
+      }else if(datastream_updated["current_value"] == '1') {
+         f1tx.clearRect(0,0,space1.width,space1.height);
+         f1tx.font = "50px Arial";
+         f1tx.strokeStyle="rgb(154,205,50)";
+         f1tx.strokeText("TAKEN",36,50);  
+           
+      }else if(datastream_updated["current_value"] == '2'){
+         f1tx.clearRect(0,0,space1.width,space1.height);
+         f1tx.font = "50px Arial";
+         f1tx.strokeStyle="rgb(154,205,50)";
+         f1tx.strokeText("BOOKED",36,50);
       }
-    });
+   });
    });      
    
 
-    checkCredit1=function(){
+   checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       var bookCode1 = enteredC1.substring(11, 5);
       var API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL";
@@ -292,9 +274,7 @@
       var timestamp = new Date().toISOString();
       var data = { "version" : "1.0.0",
             "datastreams" : [
-               { "id" : "code1", "datapoints" : [ {"at" : timestamp, "value" : bookCode1} ] }
-                ]
-            };
+               { "id" : "code1", "datapoints" : [ {"at" : timestamp, "value" : bookCode1} ] } ]};
       
       if (!isNaN(enteredC1)){
          if (enteredC1.length == 16){
@@ -308,7 +288,6 @@
       }else{
          document.getElemenById("book1").innerHTML = "invalid";
       }
-      
    }   
    
   function handleBook1(){
