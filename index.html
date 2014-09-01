@@ -815,12 +815,48 @@
 //SPACE 11 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 12 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+
+
+//-------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------
+//
+
+   var API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL",
+       FEED_IDc = "2041803059";
+       
+   confirmCode1=function(){
+      var enteredCC1 = document.getElementById("codeE1"),
+          datastreamcID1 = "code1"
+      
+      xively.setKey(API_KEYc);
+      
+      xively.datastream.get (feedID, datastreamcID1, function ( datastream ){
+         if (datastream["current_value"] == enteredCC1){
+            document.getElementById("codeEnter1").innerHTML = "thank you very much";
+            bookToTaken();
+         }else{
+            document.getElementById("codeEnter1").innerHTML = "entered wrong code, please try again";
+         }
+      }
+   
+   
+   
+}
    
   function handleBook1(){
     $.ajax({
       url: 'https://api.xively.com/v2/feeds/1868918819.csv',
       type: 'PUT',
       data: 'Sensor1,2',
+      headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
+    });
+  }
+  
+  function bookToTaken(){
+     $.ajax({
+      url: 'https://api.xively.com/v2/feeds/1868918819.csv',
+      type: 'PUT',
+      data: 'Sensor1,1',
       headers: {'X-ApiKey': 'ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr'}
     });
   }
