@@ -48,6 +48,9 @@
    -        margin-right: auto;
             font-family: Arial, Helvetica, sans-serif;
          }
+         table.level2{
+            font-family: Arial, Helvetica, sans-serif;
+         }
       </style>
    </head>
    
@@ -1008,17 +1011,214 @@
    }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 7 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit7=function(){
+      var enteredC7 = document.getElementById("hello7").value;
+      var bookCode7 = enteredC7.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID7, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book7").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book7").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code7", "datapoints" : [ {"at" : timestamp, "value" : bookCode7} ] } ]};
+               
+            if (!isNaN(enteredC7)){
+               if (enteredC7.length == 16){
+                  document.getElementById("book7").innerHTML = "thanks";
+                  handleBook7();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book7").innerHTML = "Your booking code is:" + bookCode7;
+               } else {
+                  document.getElementById("book7").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book7").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 8 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit8=function(){
+      var enteredC8 = document.getElementById("hello8").value;
+      var bookCode8 = enteredC8.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID8, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book8").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book8").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code8", "datapoints" : [ {"at" : timestamp, "value" : bookCode8} ] } ]};
+               
+            if (!isNaN(enteredC8)){
+               if (enteredC8.length == 16){
+                  document.getElementById("book8").innerHTML = "thanks";
+                  handleBook8();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book8").innerHTML = "Your booking code is:" + bookCode8;
+               } else {
+                  document.getElementById("book8").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book8").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 9 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit9=function(){
+      var enteredC9 = document.getElementById("hello9").value;
+      var bookCode9 = enteredC9.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID9, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book9").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book9").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code9", "datapoints" : [ {"at" : timestamp, "value" : bookCode9} ] } ]};
+               
+            if (!isNaN(enteredC9)){
+               if (enteredC9.length == 16){
+                  document.getElementById("book9").innerHTML = "thanks";
+                  handleBook9();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book9").innerHTML = "Your booking code is:" + bookCode6;
+               } else {
+                  document.getElementById("book9").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book9").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 10 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit10=function(){
+      var enteredC10 = document.getElementById("hello10").value;
+      var bookCode10 = enteredC10.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID10, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book10").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book10").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code10", "datapoints" : [ {"at" : timestamp, "value" : bookCode10} ] } ]};
+               
+            if (!isNaN(enteredC10)){
+               if (enteredC10.length == 16){
+                  document.getElementById("book10").innerHTML = "thanks";
+                  handleBook10();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book10").innerHTML = "Your booking code is:" + bookCode10;
+               } else {
+                  document.getElementById("book10").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book10").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 11 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+   checkCredit11=function(){
+      var enteredC11 = document.getElementById("hello11").value;
+      var bookCode11 = enteredC11.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID11, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book11").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book11").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code11", "datapoints" : [ {"at" : timestamp, "value" : bookCode11} ] } ]};
+               
+            if (!isNaN(enteredC11)){
+               if (enteredC11.length == 16){
+                  document.getElementById("book11").innerHTML = "thanks";
+                  handleBook11();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book11").innerHTML = "Your booking code is:" + bookCode11;
+               } else {
+                  document.getElementById("book11").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book11").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 //-------------------------------------------------------------------------------------------------------------
 //SPACE 12 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
-
+   checkCredit12=function(){
+      var enteredC12 = document.getElementById("hello12").value;
+      var bookCode12 = enteredC12.substring(16, 12);
+      
+      xively.setKey(API_KEY);
+      xively.datastream.get (feedID, datastreamID12, function ( datastream ){
+         if (datastream["current_value"]=='1'){
+            document.getElementById("book12").innerHTML = "sorry this spot is already taken";
+         }else if (datastream["current_value"]=='2'){
+            document.getElementById("book12").innerHTML = "sorry this spot is already booked";
+         }else{
+      
+            xively.setKey(API_KEYc);
+            var timestamp = new Date().toISOString();
+            var data = { "version" : "1.0.0",
+                  "datastreams" : [
+                  { "id" : "code12", "datapoints" : [ {"at" : timestamp, "value" : bookCode12} ] } ]};
+               
+            if (!isNaN(enteredC12)){
+               if (enteredC12.length == 16){
+                  document.getElementById("book12").innerHTML = "thanks";
+                  handleBook12();
+                  xively.feed.update(feedIDc, data, function(data){});
+                  document.getElementById("book12").innerHTML = "Your booking code is:" + bookCode12;
+               } else {
+                  document.getElementById("book12").innerHTML = "nope";
+               }
+            }else{
+               document.getElemenById("book12").innerHTML = "invalid";
+            }
+         }
+      });
+   }
 
 //-------------------------------------------------------------------------------------------------------------
 //-------------------------------------------------------------------------------------------------------------
