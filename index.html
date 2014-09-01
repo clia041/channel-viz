@@ -818,7 +818,7 @@
                if (enteredC1.length == 16){
                   document.getElementById("book1").innerHTML = "thank";
                   handleBook1();
-                  xively.feed.update(FEED_IDc, data, function(data){});
+                  xively.feed.update(feedIDc, data, function(data){});
                   document.getElementById("book1").innerHTML = "Your booking code is:" + bookCode1;
                } else {
                   document.getElementById("book1").innerHTML = "nope";
