@@ -37,7 +37,6 @@
       </div>
       </header>
       
-   
    <div id="content-wrapper">
    <div class="inner clearfix">
    <section id="main-content">
@@ -68,19 +67,24 @@
          </td>
 <!--Middle Space-->   
          <td rowspan="3" style="width:200px"></td>
-<!--Parking Space 2-->    
-         <td style="text-align:center" style="width:300px" height="200">4     
-            <button type="button" onclick="bookHandling()"> BOOK </button>
-            <canvas id="space4" width="200" height="100"></canvas>
+<!--Parking Space 4-->    
+         <td style="float:right" style="text-align:center" style="width:300px" height="200">4     
+            <button type="button"> BOOK </button>
+            <canvas id="space4" width="300" height="100"></canvas>
+            <form id=book4>
+               Please Enter your credit card number: <input type="text" id="hello4">
+               <button type="button" onclick="checkCredit1()"> SUBMIT </button>
+            </form>
          </td>
          </tr>
 
          <tr>
+<!--Parking Space 2-->         
          <td style="text-align:center" style="width:300px" height="200">2     
             <button type="button" onclick="bookHandling()"> BOOK </button>
             <canvas id="space2" width="200" height="100"></canvas>
             </td>
-            
+<!--Parking Space 5-->            
             <td style="text-align:center" style="width:300px" height="200">5
                <button type="button" onclick="bookHandling()"> BOOK </button>
                <canvas id="space5" width="200" height="100"></canvas>
@@ -88,11 +92,12 @@
           </tr>
 
           <tr>
+<!--Parking Space 3-->          
             <td style="text-align:center" style="width:300px" height="200">3     
                <button type="button" onclick="bookHandling()"> BOOK </button>
                <canvas id="space3" width="200" height="100"></canvas>
             </td>
-            
+<!--Parking Space 6-->            
             <td style="text-align:center" style="width:300px" height="200">6    
                <button type="button" onclick="bookHandling()"> BOOK </button>
                <canvas id="space6" width="200" height="100"></canvas>
@@ -112,18 +117,10 @@
    $(document).ready(function($) {
   
   var feedID        = 1868918819,  
-      datastream1ID  = "Sensor1",
-      datastream2ID  = "Sensor2",
-      datastream3ID  = "Sensor3",
-      datastream4ID  = "Sensor4",
-      datastream5ID  = "Sensor5",
-      datastream6ID  = "Sensor6",
-      datastream7ID  = "Sensor7",
-      datastream8ID  = "Sensor8",
-      datastream9ID  = "Sensor9",
-      datastream10ID  = "Sensor10",
-      datastream11ID  = "Sensor11",
-      datastream12ID  = "Sensor12";
+      datastream1ID  = "Sensor1",   datastream2ID  = "Sensor2",   datastream3ID  = "Sensor3",
+      datastream4ID  = "Sensor4",   datastream5ID  = "Sensor5",   datastream6ID  = "Sensor6",
+      datastream7ID  = "Sensor7",   datastream8ID  = "Sensor8",   datastream9ID  = "Sensor9",
+      datastream10ID  = "Sensor10", datastream11ID  = "Sensor11", datastream12ID  = "Sensor12";
       
   xively.setKey( "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr" );
   
@@ -188,6 +185,70 @@
         b1tx.strokeStyle="rgb(154,205,50)";
         b1tx.strokeText("BOOKED",36,50);
       };
+      
+      
+   xively.datastream.get (feedID, datastream1ID, function ( datastream ){
+    
+       if (datastream["current_value"] == '0'){
+        var f1=document.getElementById("space4");
+        var f1tx=f1.getContext("2d");
+            
+        f1tx.clearRect(0,0,space1.width,space1.height);
+        f1tx.font = "50px Arial";
+        f1tx.strokeStyle="rgb(154,205,50)";
+        f1tx.strokeText("FREE",36,50);
+            
+      } else if(datastream["current_value"] == '1') {
+        var t1=document.getElementById("space4");
+        var t1tx=t1.getContext("2d");
+            
+        t1tx.clearRect(0,0,space1.width,space1.height);
+        t1tx.font = "50px Arial";
+        t1tx.strokeStyle="rgb(154,205,50)";
+        t1tx.strokeText("TAKEN",36,50);
+            
+      } else if(datastream["current_value"] == '2'){
+        var b1=document.getElementById("space4");
+        var b1tx=b1.getContext("2d");
+            
+        b1tx.clearRect(0,0,space1.width,space1.height);
+        b1tx.font = "50px Arial";
+        b1tx.strokeStyle="rgb(154,205,50)";
+        b1tx.strokeText("BOOKED",35,50);
+      };
+      
+      
+      
+    xively.datastream.subscribe( feedID, datastream1ID, function ( event , datastream_updated ){
+        
+      if (datastream_updated["current_value"] == '0'){
+        var f1=document.getElementById("space4");
+        var f1tx=f1.getContext("2d");
+            
+        f1tx.clearRect(0,0,space1.width,space1.height);
+        f1tx.font = "50px Arial";
+        f1tx.strokeStyle="rgb(154,205,50)";
+        f1tx.strokeText("FREE",36,50);
+            
+      } else if(datastream_updated["current_value"] == '1') {
+        var t1=document.getElementById("space4");
+        var t1tx=t1.getContext("2d");
+            
+        t1tx.clearRect(0,0,space1.width,space1.height);
+        t1tx.font = "50px Arial";
+        t1tx.strokeStyle="rgb(154,205,50)";
+        t1tx.strokeText("TAKEN",36,50);
+            
+      } else if(datastream_updated["current_value"] == '2'){
+        var b1=document.getElementById("space4");
+        var b1tx=b1.getContext("2d");
+            
+        b1tx.clearRect(0,0,space1.width,space1.height);
+        b1tx.font = "50px Arial";
+        b1tx.strokeStyle="rgb(154,205,50)";
+        b1tx.strokeText("BOOKED",36,50);
+      };   
+      
       
       confirmCode1=function(){
         var enteredC = document.getElementById("codeEnter1").value;
