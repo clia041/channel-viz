@@ -263,7 +263,6 @@
       }
    });
    });      
-   
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 2  
    xively.datastream.get (feedID, datastreamID2, function ( datastream ){
@@ -307,7 +306,6 @@
       }
    });
    });
-   
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 3
    xively.datastream.get (feedID, datastreamID3, function ( datastream ){
@@ -351,7 +349,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 4
    xively.datastream.get (feedID, datastreamID4, function ( datastream ){
@@ -395,7 +392,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 5
    xively.datastream.get (feedID, datastreamID5, function ( datastream ){
@@ -439,7 +435,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 6
    xively.datastream.get (feedID, datastreamID6, function ( datastream ){
@@ -483,7 +478,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 7
    xively.datastream.get (feedID, datastreamID7, function ( datastream ){
@@ -505,7 +499,7 @@
          f7tx.strokeStyle="rgb(154,205,50)";
          f7tx.strokeText("BOOKED",36,50);
      };
-//UPDATE STATUS DISPLAY FOR SPACE 3
+//UPDATE STATUS DISPLAY FOR SPACE 7
    xively.datastream.subscribe( feedID, datastreamID7, function ( event , datastream_updated ){
       if (datastream_updated["current_value"] == '0'){
          f7tx.clearRect(0,0,space3.width,space3.height);
@@ -527,7 +521,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 8
    xively.datastream.get (feedID, datastreamID8, function ( datastream ){
@@ -549,7 +542,7 @@
          f8tx.strokeStyle="rgb(154,205,50)";
          f8tx.strokeText("BOOKED",36,50);
      };
-//UPDATE STATUS DISPLAY FOR SPACE 3
+//UPDATE STATUS DISPLAY FOR SPACE 8
    xively.datastream.subscribe( feedID, datastreamID8, function ( event , datastream_updated ){
       if (datastream_updated["current_value"] == '0'){
          f8tx.clearRect(0,0,space3.width,space3.height);
@@ -571,7 +564,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 9
    xively.datastream.get (feedID, datastreamID9, function ( datastream ){
@@ -615,7 +607,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 10
    xively.datastream.get (feedID, datastreamID10, function ( datastream ){
@@ -659,7 +650,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 11
    xively.datastream.get (feedID, datastreamID11, function ( datastream ){
@@ -681,7 +671,7 @@
          f11tx.strokeStyle="rgb(154,205,50)";
          f11tx.strokeText("BOOKED",36,50);
      };
-//UPDATE STATUS DISPLAY FOR SPACE 10
+//UPDATE STATUS DISPLAY FOR SPACE 11
    xively.datastream.subscribe( feedID, datastreamID11, function ( event , datastream_updated ){
       if (datastream_updated["current_value"] == '0'){
          f11tx.clearRect(0,0,space3.width,space3.height);
@@ -703,7 +693,6 @@
       }
    });
    });
-
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 12
    xively.datastream.get (feedID, datastreamID12, function ( datastream ){
@@ -725,7 +714,7 @@
          f12tx.strokeStyle="rgb(154,205,50)";
          f12tx.strokeText("BOOKED",36,50);
      };
-//UPDATE STATUS DISPLAY FOR SPACE 10
+//UPDATE STATUS DISPLAY FOR SPACE 12
    xively.datastream.subscribe( feedID, datastreamID12, function ( event , datastream_updated ){
       if (datastream_updated["current_value"] == '0'){
          f12tx.clearRect(0,0,space3.width,space3.height);
@@ -747,7 +736,11 @@
       }
    });
    });
+   
+//-------------------------------------------------------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------------
 
+//SPACE 1 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING
    checkCredit1=function(){
       var enteredC1 = document.getElementById("hello1").value;
       var bookCode1 = enteredC1.substring(11, 5);
@@ -773,6 +766,30 @@
          document.getElemenById("book1").innerHTML = "invalid";
       }
    }   
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 2 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING   
+
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 3 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 4 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 5 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 6 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 7 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 8 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 9 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 10 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 11 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
+//-------------------------------------------------------------------------------------------------------------
+//SPACE 12 CARD VALIDATION, CODE SAVE AND HANDLE BOOKING 
    
   function handleBook1(){
     $.ajax({
