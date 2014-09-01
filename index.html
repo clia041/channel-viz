@@ -830,7 +830,7 @@
       
       xively.setKey(API_KEYc);
       
-      xively.datastream.get (feedID, datastreamcID1, function ( datastream ){
+      xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
          if (datastream["current_value"] == enteredCC1){
             document.getElementById("codeEnter1").innerHTML = "thank you very much";
             bookToTaken();
