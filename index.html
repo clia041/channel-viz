@@ -276,7 +276,7 @@
           API_KEYc = "WpOOQ3ybilqsx42Abq9dbHgv50pr9kijh4iWtLipKRa9CsyL",
           feedIDc = "2041803059",
           sensorURL = "https://api.xively.com/v2/feeds/1868918819.csv",
-          codeURL = "https://api.xively.com/v2/feeds/2041803059.csv"
+          codeURL = "https://api.xively.com/v2/feeds/2041803059.csv";
           
       xively.setKey( API_KEY);
   
@@ -289,6 +289,7 @@
           
 //-------------------------------------------------------------------------------------------------------------          
 //NO. OF FREE SPACES
+   var selector = "#totalSpaces";
    var noFree= 0;
      
           
@@ -1831,7 +1832,7 @@
     });
   }
   
-   document.getElementById("totalSpaces").innerHTML = noFree + "/12";
+   $(selector).html(noFree);
 });
 </script>
 </body>
