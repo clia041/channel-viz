@@ -289,15 +289,16 @@
           
 //-------------------------------------------------------------------------------------------------------------          
 //NO. OF FREE SPACES
-     var noFree= 0;
+   var noFree= 0;
       
-      var addSpace = (function(){
-         return function(){return noFree += 1;}
-      })();
+   addSpace = function(){
+         noFree += 1;
+      }
       
-      var minSpace = (function(){
-         return function(){return noFree -= 1;}
-      })()
+   minSpace = function(){
+         noFree -= 1;
+   }
+
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 1  
    xively.datastream.get (feedID, datastreamID1, function ( datastream ){
