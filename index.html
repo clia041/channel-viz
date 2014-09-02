@@ -289,16 +289,8 @@
           
 //-------------------------------------------------------------------------------------------------------------          
 //NO. OF FREE SPACES
-   
-      var noFree= 0;
-      
-      var addSpace = (function(){
-         return function(){return noFree += 1;}
-      })();
-      
-      var minSpace = (function(){
-         return function(){return noFree -= 1;}
-      })();
+   var noFree= 0;
+   noFree++;
       document.getElementById("totalSpaces").innerHTML = noFree + "/12";
           
 //-------------------------------------------------------------------------------------------------------------
