@@ -850,7 +850,7 @@
                   { "id" : "code2", "datapoints" : [ {"at" : timestamp, "value" : bookCode2} ] } ]};
                
             if (!isNaN(enteredC2)){
-               if (enteredC3.length == 16){
+               if (enteredC2.length == 16){
                   document.getElementById("book2").innerHTML = "thanks";
                   handleBook2();
                   xively.feed.update(feedIDc, data, function(data){});
