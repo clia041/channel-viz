@@ -290,8 +290,15 @@
 //-------------------------------------------------------------------------------------------------------------          
 //NO. OF FREE SPACES
    
-      var noFree;
+      var noFree= 0;
       
+      var addSpace = (function(){
+         return function(){return noFree+=1;}
+      })();
+      
+      var minSpace = (function(){
+         return function(){return noFree-=1;}
+      })();
       document.getElementById("totalSpaces").innerHTML = noFree + "/12";
           
 //-------------------------------------------------------------------------------------------------------------
@@ -302,7 +309,7 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("FREE",36,50);
-         ++noFree;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f1tx.clearRect(0,0,space1.width,space1.height);
@@ -323,14 +330,14 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f1tx.clearRect(0,0,space1.width,space1.height);
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(220,20,60)";
          f1tx.strokeText("TAKEN",36,50); 
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f1tx.clearRect(0,0,space1.width,space1.height);
@@ -348,7 +355,7 @@
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f2tx.clearRect(0,0,space2.width,space2.height);
@@ -369,14 +376,14 @@
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(220,20,60)";
          f2tx.strokeText("TAKEN",36,50);  
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f2tx.clearRect(0,0,space2.width,space2.height);
@@ -394,7 +401,7 @@
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f3tx.clearRect(0,0,space3.width,space3.height);
@@ -415,14 +422,14 @@
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(220,20,60)";
          f3tx.strokeText("TAKEN",36,50); 
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f3tx.clearRect(0,0,space3.width,space3.height);
@@ -440,7 +447,7 @@
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(154,205,50)";
          f4tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f4tx.clearRect(0,0,space4.width,space4.height);
@@ -461,14 +468,14 @@
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(154,205,50)";
          f4tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f4tx.clearRect(0,0,space4.width,space4.height);
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(220,20,60)";
          f4tx.strokeText("TAKEN",36,50); 
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f4tx.clearRect(0,0,space4.width,space4.height);
@@ -486,7 +493,7 @@
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(154,205,50)";
          f5tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f5tx.clearRect(0,0,space5.width,space5.height);
@@ -507,14 +514,14 @@
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(154,205,50)";
          f5tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f5tx.clearRect(0,0,space5.width,space5.height);
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(220,20,60)";
          f5tx.strokeText("TAKEN",36,50); 
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f5tx.clearRect(0,0,space5.width,space5.height);
@@ -532,7 +539,7 @@
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(154,205,50)";
          f6tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f6tx.clearRect(0,0,space3.width,space3.height);
@@ -553,14 +560,14 @@
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(154,205,50)";
          f6tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f6tx.clearRect(0,0,space3.width,space3.height);
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(220,20,60)";
          f6tx.strokeText("TAKEN",36,50); 
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f6tx.clearRect(0,0,space3.width,space3.height);
@@ -578,7 +585,7 @@
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(154,205,50)";
          f7tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f7tx.clearRect(0,0,space3.width,space3.height);
@@ -599,14 +606,14 @@
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(154,205,50)";
          f7tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
        
       }else if(datastream_updated["current_value"] == '1') {
          f7tx.clearRect(0,0,space3.width,space3.height);
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(220,20,60)";
          f7tx.strokeText("TAKEN",36,50);  
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f7tx.clearRect(0,0,space3.width,space3.height);
@@ -624,7 +631,7 @@
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(154,205,50)";
          f8tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f8tx.clearRect(0,0,space3.width,space3.height);
@@ -645,14 +652,14 @@
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(154,205,50)";
          f8tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f8tx.clearRect(0,0,space3.width,space3.height);
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(220,20,60)";
          f8tx.strokeText("TAKEN",36,50); 
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f8tx.clearRect(0,0,space3.width,space3.height);
@@ -670,7 +677,7 @@
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(154,205,50)";
          f9tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f9tx.clearRect(0,0,space3.width,space3.height);
@@ -691,14 +698,14 @@
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(154,205,50)";
          f9tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f9tx.clearRect(0,0,space3.width,space3.height);
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(220,20,60)";
          f9tx.strokeText("TAKEN",36,50);
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f9tx.clearRect(0,0,space3.width,space3.height);
@@ -716,7 +723,7 @@
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(154,205,50)";
          f10tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f10tx.clearRect(0,0,space3.width,space3.height);
@@ -737,14 +744,14 @@
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(154,205,50)";
          f10tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f10tx.clearRect(0,0,space3.width,space3.height);
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(220,20,60)";
          f10tx.strokeText("TAKEN",36,50);
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f10tx.clearRect(0,0,space3.width,space3.height);
@@ -762,7 +769,7 @@
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(154,205,50)";
          f11tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f11tx.clearRect(0,0,space3.width,space3.height);
@@ -783,14 +790,14 @@
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(154,205,50)";
          f11tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f11tx.clearRect(0,0,space3.width,space3.height);
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(220,20,60)";
          f11tx.strokeText("TAKEN",36,50);
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f11tx.clearRect(0,0,space3.width,space3.height);
@@ -808,7 +815,7 @@
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(154,205,50)";
          f12tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream["current_value"] == '1') {
          f12tx.clearRect(0,0,space3.width,space3.height);
@@ -829,14 +836,14 @@
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(154,205,50)";
          f12tx.strokeText("FREE",36,50);
-         noFree++;
+         addSpace();
         
       }else if(datastream_updated["current_value"] == '1') {
          f12tx.clearRect(0,0,space3.width,space3.height);
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(220,20,60)";
          f12tx.strokeText("TAKEN",36,50);
-         noFree--;
+         minSpace();
            
       }else if(datastream_updated["current_value"] == '2'){
          f12tx.clearRect(0,0,space3.width,space3.height);
@@ -1489,7 +1496,6 @@
          data: 'Sensor1,2',
          headers: {'X-ApiKey': API_KEY}
       });
-      noFree--;
    }
   
    function bookToTaken1(){
@@ -1518,7 +1524,6 @@
       data: 'Sensor2,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken2(){
@@ -1546,7 +1551,6 @@
       data: 'Sensor3,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken3(){
@@ -1574,7 +1578,6 @@
       data: 'Sensor4,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken4(){
@@ -1602,7 +1605,6 @@
       data: 'Sensor5,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken5(){
@@ -1630,7 +1632,6 @@
       data: 'Sensor6,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken6(){
@@ -1658,7 +1659,6 @@
       data: 'Sensor7,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken7(){
@@ -1686,7 +1686,6 @@
       data: 'Sensor8,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken8(){
@@ -1714,7 +1713,6 @@
       data: 'Sensor9,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken9(){
@@ -1743,7 +1741,6 @@
       data: 'Sensor10,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken10(){
@@ -1772,7 +1769,6 @@
       data: 'Sensor11,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken11(){
@@ -1800,7 +1796,6 @@
       data: 'Sensor12,2',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree--;
    }
    
    function bookToTaken12(){
