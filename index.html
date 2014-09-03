@@ -305,9 +305,8 @@
             noFree++;
          }
       }
-   });
-   
-   $(function worker(){
+      
+      $(function worker(){
       $.ajaxSetup ({
          cache: false,
          complete: function(){
@@ -321,6 +320,9 @@
       
       $("selector").html(ajax_load).load(loadUrl);
    });
+   });
+   
+   
    
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 1  
