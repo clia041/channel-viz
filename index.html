@@ -308,7 +308,6 @@
       }
       
       function worker(){
-    // don't cache ajax or content won't be fresh
     $.ajaxSetup ({
         cache: false,
         complete: function() {
@@ -317,7 +316,7 @@
     });
     var ajax_load = noFree + "/12";
    
-      $(selector).html(ajax_load);
+      $(selector).html(ajax_load).load("http://clia041.github.io/channel-viz/");
    }
    });
 //-------------------------------------------------------------------------------------------------------------
