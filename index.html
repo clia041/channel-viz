@@ -291,9 +291,9 @@
    var noFree= 0;
    
    
-   xively.feed.get(feedID, function(datastream){
+   xively.feed.get(feedID, function(data){
       for (x=0; x<datastream.length; x++){
-      datastream = feed.datastream[x];
+      data = feed.datastream[x];
       value = datastream["current_value"];
       
       if (value == '0'){
