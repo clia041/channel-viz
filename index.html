@@ -292,11 +292,16 @@
    
    
    xively.feed.get(feedID, function(data){
-      for (x=0; x<datastream.length; x++){
-      data = feed.datastream[x];
-      value = datastream["current_value"];
       
-      if (value == '0'){
+      var feed = data,
+        datastream,
+        value,
+        
+      for (var x=0; len = feed.datastreams.length; x < len; x++){
+      data = feed.datastream[x];
+      value = parseInt(datastream["current_value"]);
+      
+      if (value == 0){
          noFree++;
       
       }
