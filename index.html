@@ -306,7 +306,7 @@
          }
       }
       
-      $(function worker(){
+      function worker(){
       $.ajaxSetup ({
          cache: false,
          complete: function(){
@@ -319,7 +319,7 @@
       var loadUrl = "http://clia041.github.io/channel-viz/";
       
       $("selector").html(ajax_load).load(loadUrl);
-   });
+   };
    });
    
    
