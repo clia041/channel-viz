@@ -306,24 +306,6 @@
             noFree++;
          }
       }
-      
-   xively.feed.subscribe(feedID, function(event, data){
-       xively.feed.get(feedID, function(data){
-      var feed = data,
-          datastream,
-          value,
-          len = feed.datastreams.length,
-          x;
-          
-      for (x = 0; x < len; x++) {
-      datastream = feed.datastreams[x];
-      value = datastream["current_value"];
-         if (value == '0'){
-            noFree++;
-         }
-      }
-       });
-   });   
       $(selector).html(noFree); 
    });
    
@@ -356,12 +338,14 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("FREE",36,50);
+         noFree++;
         
       }else if(datastream_updated["current_value"] == '1') {
          f1tx.clearRect(0,0,space1.width,space1.height);
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(220,20,60)";
          f1tx.strokeText("TAKEN",36,50); 
+         
 
            
       }else if(datastream_updated["current_value"] == '2'){
@@ -369,9 +353,10 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("BOOKED",36,50);
- 
+         noFree--;
       }
    });
+   $(selector).html(noFree); 
    });      
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 2  
