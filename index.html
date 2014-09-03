@@ -290,13 +290,15 @@
 //NO. OF FREE SPACES
    var selector = "#totalSpaces",
        noFree= 0,
-       feed = data,
-       datastream,
-       value,
-       len = feed.datastreams.length,
-       x;
+       
 
    xively.feed.get(feedID, function(data){
+      var feed = data,
+          datastream,
+          value,
+          len = feed.datastreams.length,
+          x;
+          
       for (x = 0; x < len; x++) {
       datastream = feed.datastreams[x];
       value = datastream["current_value"];
