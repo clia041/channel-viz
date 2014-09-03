@@ -306,26 +306,9 @@
             noFree++;
          }
       }
-      
-   xively.feed.subscribe(feedID, function(data, event){
-      var feed = data,
-        datastream,
-        value,
-        len = feed.datastreams.length,
-        x;
-        
-      for (x = 0; x < len; x++) {
-      datastream = feed.datastreams[x];
-      value = datastream["current_value"];
-         if (value == '0'){
-            noFree++;
-         }
-      }
-   })   
       $(selector).html(noFree); 
    });
    
-      
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 1  
    xively.datastream.get (feedID, datastreamID1, function ( datastream ){
