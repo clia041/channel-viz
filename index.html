@@ -308,7 +308,6 @@
             noFree++;
          }
       }
-      
       function worker(){
          $.ajaxSetup ({
          cache: false,
@@ -317,6 +316,7 @@
         }
     });
    }
+   
    $("#totalSpaces").html(noFree + "/12").load("http://clia041.github.io/channel-viz/");
    });
 //-------------------------------------------------------------------------------------------------------------
