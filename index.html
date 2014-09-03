@@ -289,16 +289,14 @@
 //-------------------------------------------------------------------------------------------------------------          
 //NO. OF FREE SPACES
    var selector = "#totalSpaces",
-       noFree= 0;
+       noFree= 0,
+       feed = data,
+       datastream,
+       value,
+       len = feed.datastreams.length,
+       x;
 
    xively.feed.get(feedID, function(data){
-      
-      var feed = data,
-        datastream,
-        value,
-        len = feed.datastreams.length,
-        x;
-        
       for (x = 0; x < len; x++) {
       datastream = feed.datastreams[x];
       value = datastream["current_value"];
@@ -306,6 +304,17 @@
             noFree++;
          }
       }
+      
+   xively.feed.subscribe(feedID, function(event, data){
+      noFree=0;
+     for (x = 0; x < len; x++) {
+      datastream = feed.datastreams[x];
+      value = datastream["current_value"];
+         if (value == '0'){
+            noFree++;
+         }
+      } 
+   });   
       $(selector).html(noFree); 
    });
    
@@ -385,7 +394,6 @@
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("FREE",36,50);
-         noFree++;
         
       }else if(datastream_updated["current_value"] == '1') {
          f2tx.clearRect(0,0,space2.width,space2.height);
