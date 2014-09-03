@@ -309,7 +309,7 @@
       
    xively.feed.subscribe(feedID, function(event, data){
       for (x = 0; x < len; x++) {
-      datastream_updated = feed.datastreams_updated[x];
+      datastream_updated = feed.datastreams[x];
       value = datastream_updated["current_value"];
          if (value == '0'){
             noFree++;
