@@ -411,6 +411,7 @@
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("FREE",36,50);
+         noFree++;
          
         
       }else if(datastream["current_value"] == '1') {
@@ -418,12 +419,14 @@
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(220,20,60)";
          f3tx.strokeText("TAKEN",36,50);
+         noFree--;
            
       }else if(datastream["current_value"] == '2'){
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("BOOKED",36,50);
+         noFree--;
      };
 //UPDATE STATUS DISPLAY FOR SPACE 3
    xively.datastream.subscribe( feedID, datastreamID3, function ( event , datastream_updated ){
@@ -1554,7 +1557,7 @@
       data: 'Sensor2,1',
       headers: {'X-ApiKey': API_KEY}
     });
-    
+    noFree++;
   }
   
   function clearCode2(){
