@@ -306,16 +306,16 @@
          }
       }
       
-      function worker(){
+      function worker1(){
       $.ajaxSetup ({
          cache: false,
          complete: function(){
-            setTimeout(worker,5000);
+            setTimeout(worker1,50000);
          }
       });
       };
       
-      worker();
+      worker1();
       $("selector").html(noFree + "/12");
    
    });
