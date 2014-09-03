@@ -301,7 +301,7 @@
           
       for (x = 0; x < len; x++) {
       datastream = feed.datastreams[x];
-      value = datastream_upated["current_value"];
+      value = datastream["current_value"];
          if (value == '0'){
             noFree++;
          }
@@ -311,7 +311,7 @@
       noFree=0;
      for (x = 0; x < len; x++) {
       datastream = feed.datastreams[x];
-      value = datastream["current_value"];
+      value = datastream_updated["current_value"];
          if (value == '0'){
             noFree++;
          }
