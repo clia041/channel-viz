@@ -277,7 +277,7 @@
           sensorURL = "https://api.xively.com/v2/feeds/1868918819.csv",
           codeURL = "https://api.xively.com/v2/feeds/2041803059.csv";
           
-      xively.setKey( API_KEY);
+      xively.setKey(API_KEY);
   
       var f1=document.getElementById("space1"), f1tx=f1.getContext("2d"), f2=document.getElementById("space2"), f2tx=f2.getContext("2d"),
           f3=document.getElementById("space3"), f3tx=f3.getContext("2d"), f4=document.getElementById("space4"), f4tx=f4.getContext("2d"),
@@ -316,7 +316,6 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("FREE",36,50);
-         
         
       }else if(datastream["current_value"] == '1') {
          f1tx.clearRect(0,0,space1.width,space1.height);
@@ -351,7 +350,6 @@
          f1tx.strokeText("BOOKED",36,50);
       }
    });
-   
    });      
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 2  
