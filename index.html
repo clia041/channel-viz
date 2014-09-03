@@ -291,7 +291,6 @@
    var selector = "#totalSpaces",
        noFree= 0;
        
-
    xively.feed.get(feedID, function(data){
       var feed = data,
           datastream,
@@ -306,7 +305,6 @@
             noFree++;
          }
       }
-      $(selector).html(noFree); 
    });
    
 //-------------------------------------------------------------------------------------------------------------
@@ -345,8 +343,6 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(220,20,60)";
          f1tx.strokeText("TAKEN",36,50); 
-         
-
            
       }else if(datastream_updated["current_value"] == '2'){
          f1tx.clearRect(0,0,space1.width,space1.height);
