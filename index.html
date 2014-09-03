@@ -297,14 +297,13 @@
         datastream,
         value,
         
-      for (var x=0; len = feed.datastreams.length; x < len; x++){
-      data = feed.datastream[x];
+      for (var x = 0, len = feed.datastreams.length; x < len; x++) {
+      datastream = feed.datastreams[x];
       value = parseInt(datastream["current_value"]);
       
-      if (value == 0){
-         noFree++;
-      
-      }
+         if (value == 0){
+            noFree++;
+         }
       }
    })
       
