@@ -306,6 +306,24 @@
             noFree++;
          }
       }
+      
+   xively.feed.subscribe(feedID, function(data, event){
+      var feed = data,
+        datastream,
+        value,
+        len = feed.datastreams.length,
+        x;
+        
+      for (x = 0; x < len; x++) {
+      datastream = feed.datastreams[x];
+      value = datastream["current_value"];
+         if (value == '0'){
+            noFree++;
+         }
+      }
+   })   
+      $(selector).html(noFree); 
+   });
    
       
 //-------------------------------------------------------------------------------------------------------------
@@ -1556,7 +1574,6 @@
       data: 'Sensor2,1',
       headers: {'X-ApiKey': API_KEY}
     });
-    noFree++;
   }
   
   function clearCode2(){
@@ -1849,9 +1866,6 @@
       headers: {'X-ApiKey': API_KEYc}
     });
   }
-  
-  $(selector).html(noFree); 
-   });
 });
 </script>
 </body>
