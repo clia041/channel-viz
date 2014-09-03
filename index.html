@@ -337,7 +337,6 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("FREE",36,50);
-         noFree++;
         
       }else if(datastream_updated["current_value"] == '1') {
          f1tx.clearRect(0,0,space1.width,space1.height);
@@ -350,7 +349,6 @@
          f1tx.font = "50px Arial";
          f1tx.strokeStyle="rgb(154,205,50)";
          f1tx.strokeText("BOOKED",36,50);
-         noFree--;
       }
    });
    
@@ -363,9 +361,7 @@
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("FREE",36,50);
-       
          
-        
       }else if(datastream["current_value"] == '1') {
          f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
@@ -418,14 +414,14 @@
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(220,20,60)";
          f3tx.strokeText("TAKEN",36,50);
-         noFree--;
+    
            
       }else if(datastream["current_value"] == '2'){
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("BOOKED",36,50);
-         noFree--;
+ 
      };
 //UPDATE STATUS DISPLAY FOR SPACE 3
    xively.datastream.subscribe( feedID, datastreamID3, function ( event , datastream_updated ){
