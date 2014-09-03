@@ -67,8 +67,9 @@
       <header>
         <h1>Smarter Parking</h1>
         <h2>Parking has never been easier</h2>
-        
+      <div id="spaces">
         <h3> Number of Free Parking Spaces: <span id="totalSpaces"></span></h2>
+      </div>
       </div>
       </header>
       
@@ -289,8 +290,7 @@
           
 //-------------------------------------------------------------------------------------------------------------          
 //NO. OF FREE SPACES
-   var selector = "#totalSpaces",
-       noFree= 0;
+   var noFree= 0;
        
    xively.feed.get(feedID, function(data){
       var feed = data,
@@ -315,7 +315,7 @@
         }
     });
    }
-   $(selector).html(noFree + "/12").load("http://clia041.github.io/channel-viz/");
+   $("spaces").html(noFree + "/12").load("http://clia041.github.io/channel-viz/");
    });
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 1  
