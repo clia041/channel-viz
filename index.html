@@ -308,6 +308,7 @@
       }
       
    xively.feed.subscribe(feedID, function(event, data_updated){
+      feed = data_updated;
       noFree=0;
      for (x = 0; x < len; x++) {
       datastream = feed.datastreams[x];
