@@ -307,15 +307,22 @@
          }
       }
       
-   xively.feed.subscribe(feedID, function(event, data_updated){
-      noFree=0;
-     for (x = 0; x < len; x++) {
-      datastream = feed_updated.datastreams[x];
+   xively.feed.subscribe(feedID, function(event, data){
+       xively.feed.get(feedID, function(data){
+      var feed = data,
+          datastream,
+          value,
+          len = feed.datastreams.length,
+          x;
+          
+      for (x = 0; x < len; x++) {
+      datastream = feed.datastreams[x];
       value = datastream["current_value"];
          if (value == '0'){
             noFree++;
          }
-      } 
+      }
+       });
    });   
       $(selector).html(noFree); 
    });
