@@ -309,6 +309,13 @@
       
       
    xively.feed.subscribe(feedID, function(event, data){
+      var noFree= 0;
+      var feed = data,
+        datastream,
+        datastream_updated,
+        value,
+        len = feed.datastreams.length,
+        x;
       for (x = 0; x < len; x++) {
       datastream = feed.datastreams[x];
       value = datastream["current_value"];
