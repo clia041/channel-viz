@@ -305,6 +305,17 @@
             noFree++;
          }
       }
+      
+      function worker1(){
+      $.ajaxSetup ({
+         cache: false,
+         complete: function(){
+            setTimeout(worker1,50000);
+         }
+      });
+      };
+      
+      worker1();
       $(selector).html(noFree + "/12");
    });
 //-------------------------------------------------------------------------------------------------------------
