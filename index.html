@@ -67,9 +67,7 @@
       <header>
         <h1>Smarter Parking</h1>
         <h2>Parking has never been easier</h2>
-      <div id="spaces">
         <h3> Number of Free Parking Spaces: <span id="totalSpaces"></span></h2>
-      </div>
       </div>
       </header>
       
@@ -315,7 +313,7 @@
         }
     });
    }
-   $("#spaces").html(noFree + "/12").load("http://clia041.github.io/channel-viz/");
+   $("#totalSpaces").html(noFree + "/12").load("http://clia041.github.io/channel-viz/");
    });
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 1  
