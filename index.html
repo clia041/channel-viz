@@ -819,7 +819,9 @@
                   handleBook1()
                   xively.feed.update(feedIDc, data, function(data){});
                   document.getElementById("book1").innerHTML = "Your booking code is:  " + bookCode1;
-               } 
+               } else {
+                  document.getElementById("book1").innerHTML = "Invalid credit card number. Please refresh the page and try again";
+               }
             }else{
                document.getElementById("book1").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
