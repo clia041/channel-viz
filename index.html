@@ -819,9 +819,7 @@
                   handleBook1()
                   xively.feed.update(feedIDc, data, function(data){});
                   document.getElementById("book1").innerHTML = "Your booking code is:  " + bookCode1;
-               } else {
-                  document.getElementById("book1").innerHTML = "Invalid credit card number. Please refresh the page and try again";
-               }
+               } 
             }else{
                document.getElementById("book1").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
@@ -837,9 +835,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID2, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book2").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book2").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book2").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book2").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -850,15 +848,15 @@
                
             if (!isNaN(enteredC2)){
                if (enteredC2.length == 16){
-                  document.getElementById("book2").innerHTML = "thanks";
+                  document.getElementById("book2").innerHTML = "Thank you. ";
                   handleBook2();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book2").innerHTML = "Your booking code is:" + bookCode2;
+                  document.getElementById("book2").innerHTML = "Your booking code is: " + bookCode2;
                } else {
-                  document.getElementById("book2").innerHTML = "nope";
+                  document.getElementById("book2").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book2").innerHTML = "invalid";
+               document.getElementById("book2").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -873,9 +871,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID3, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book3").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book3").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book3").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book3").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -886,15 +884,15 @@
                
             if (!isNaN(enteredC3)){
                if (enteredC3.length == 16){
-                  document.getElementById("book3").innerHTML = "thanks";
+                  document.getElementById("book3").innerHTML = "Thank you. ";
                   handleBook3();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book3").innerHTML = "Your booking code is:" + bookCode3;
+                  document.getElementById("book3").innerHTML = "Your booking code is: " + bookCode3;
                } else {
-                  document.getElementById("book3").innerHTML = "nope";
+                  document.getElementById("book3").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book3").innerHTML = "invalid";
+               document.getElementById("book3").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -909,9 +907,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID4, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book4").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book4").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book4").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book4").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -922,15 +920,15 @@
                
             if (!isNaN(enteredC4)){
                if (enteredC4.length == 16){
-                  document.getElementById("book4").innerHTML = "thanks";
+                  document.getElementById("book4").innerHTML = "Thank you. ";
                   handleBook4();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book4").innerHTML = "Your booking code is:" + bookCode4;
+                  document.getElementById("book4").innerHTML = "Your booking code is: " + bookCode4;
                } else {
-                  document.getElementById("book4").innerHTML = "nope";
+                  document.getElementById("book4").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book4").innerHTML = "invalid";
+               document.getElementById("book4").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -944,9 +942,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID5, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book5").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book5").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book5").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book5").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -957,15 +955,15 @@
                
             if (!isNaN(enteredC5)){
                if (enteredC5.length == 16){
-                  document.getElementById("book5").innerHTML = "thanks";
+                  document.getElementById("book5").innerHTML = "Thank you. ";
                   handleBook5();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book5").innerHTML = "Your booking code is:" + bookCode5;
+                  document.getElementById("book5").innerHTML = "Your booking code is: " + bookCode5;
                } else {
-                  document.getElementById("book5").innerHTML = "nope";
+                  document.getElementById("book5").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book5").innerHTML = "invalid";
+               document.getElementById("book5").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -979,9 +977,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID6, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book6").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book6").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book6").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book6").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -992,15 +990,15 @@
                
             if (!isNaN(enteredC6)){
                if (enteredC6.length == 16){
-                  document.getElementById("book6").innerHTML = "thanks";
+                  document.getElementById("book6").innerHTML = "Thank you. ";
                   handleBook6();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book6").innerHTML = "Your booking code is:" + bookCode6;
+                  document.getElementById("book6").innerHTML = "Your booking code is: " + bookCode6;
                } else {
-                  document.getElementById("book6").innerHTML = "nope";
+                  document.getElementById("book6").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book6").innerHTML = "invalid";
+               document.getElementById("book6").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1014,9 +1012,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID7, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book7").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book7").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book7").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book7").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -1027,15 +1025,15 @@
                
             if (!isNaN(enteredC7)){
                if (enteredC7.length == 16){
-                  document.getElementById("book7").innerHTML = "thanks";
+                  document.getElementById("book7").innerHTML = "Thank you. ";
                   handleBook7();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book7").innerHTML = "Your booking code is:" + bookCode7;
+                  document.getElementById("book7").innerHTML = "Your booking code is: " + bookCode7;
                } else {
-                  document.getElementById("book7").innerHTML = "nope";
+                  document.getElementById("book7").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book7").innerHTML = "invalid";
+               document.getElementById("book7").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1049,9 +1047,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID8, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book8").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book8").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book8").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book8").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -1062,15 +1060,15 @@
                
             if (!isNaN(enteredC8)){
                if (enteredC8.length == 16){
-                  document.getElementById("book8").innerHTML = "thanks";
+                  document.getElementById("book8").innerHTML = "Thank you. ";
                   handleBook8();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book8").innerHTML = "Your booking code is:" + bookCode8;
+                  document.getElementById("book8").innerHTML = "Your booking code is: " + bookCode8;
                } else {
-                  document.getElementById("book8").innerHTML = "nope";
+                  document.getElementById("book8").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book8").innerHTML = "invalid";
+               document.getElementById("book8").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1084,9 +1082,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID9, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book9").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book9").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book9").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book9").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -1097,15 +1095,15 @@
                
             if (!isNaN(enteredC9)){
                if (enteredC9.length == 16){
-                  document.getElementById("book9").innerHTML = "thanks";
+                  document.getElementById("book9").innerHTML = "Thank you. ";
                   handleBook9();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book9").innerHTML = "Your booking code is:" + bookCode9;
+                  document.getElementById("book9").innerHTML = "Your booking code is: " + bookCode9;
                } else {
-                  document.getElementById("book9").innerHTML = "nope";
+                  document.getElementById("book9").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book9").innerHTML = "invalid";
+               document.getElementById("book9").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1119,9 +1117,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID10, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book10").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book10").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book10").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book10").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -1132,15 +1130,15 @@
                
             if (!isNaN(enteredC10)){
                if (enteredC10.length == 16){
-                  document.getElementById("book10").innerHTML = "thanks";
+                  document.getElementById("book10").innerHTML = "Thank you. ";
                   handleBook10();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book10").innerHTML = "Your booking code is:" + bookCode10;
+                  document.getElementById("book10").innerHTML = "Your booking code is: " + bookCode10;
                } else {
-                  document.getElementById("book10").innerHTML = "nope";
+                  document.getElementById("book10").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book10").innerHTML = "invalid";
+               document.getElementById("book10").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1154,9 +1152,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID11, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book11").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book11").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book11").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book11").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -1167,15 +1165,15 @@
                
             if (!isNaN(enteredC11)){
                if (enteredC11.length == 16){
-                  document.getElementById("book11").innerHTML = "thanks";
+                  document.getElementById("book11").innerHTML = "Thank you. ";
                   handleBook11();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book11").innerHTML = "Your booking code is:" + bookCode11;
+                  document.getElementById("book11").innerHTML = "Your booking code is: " + bookCode11;
                } else {
-                  document.getElementById("book11").innerHTML = "nope";
+                  document.getElementById("book11").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book11").innerHTML = "invalid";
+               document.getElementById("book11").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1189,9 +1187,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID12, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book12").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book12").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book12").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book12").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -1202,15 +1200,15 @@
                
             if (!isNaN(enteredC12)){
                if (enteredC12.length == 16){
-                  document.getElementById("book12").innerHTML = "thanks";
+                  document.getElementById("book12").innerHTML = "Thank you. ";
                   handleBook12();
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book12").innerHTML = "Your booking code is:" + bookCode12;
+                  document.getElementById("book12").innerHTML = "Your booking code is: " + bookCode12;
                } else {
-                  document.getElementById("book12").innerHTML = "nope";
+                  document.getElementById("book12").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElementById("book12").innerHTML = "invalid";
+               document.getElementById("book12").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
@@ -1244,11 +1242,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID2, function ( datastream ){
          if (datastream["current_value"] === enteredCC2){
-            document.getElementById("codeEnter2").innerHTML = "thank you very much";
+            document.getElementById("codeEnter2").innerHTML = "Thank you very much";
             bookToTaken2();
             clearCode2();
          }else{
-            document.getElementById("codeEnter2").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter2").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1261,11 +1259,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID3, function ( datastream ){
          if (datastream["current_value"] === enteredCC3){
-            document.getElementById("codeEnter3").innerHTML = "thank you very much";
+            document.getElementById("codeEnter3").innerHTML = "Thank you very much";
             bookToTaken3();
             clearCode3();
          }else{
-            document.getElementById("codeEnter3").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter3").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1278,11 +1276,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID4, function ( datastream ){
          if (datastream["current_value"] === enteredCC4){
-            document.getElementById("codeEnter4").innerHTML = "thank you very much";
+            document.getElementById("codeEnter4").innerHTML = "Thank you very much";
             bookToTaken4();
             clearCode4();
          }else{
-            document.getElementById("codeEnter4").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter4").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1295,11 +1293,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID5, function ( datastream ){
          if (datastream["current_value"] === enteredCC5){
-            document.getElementById("codeEnter5").innerHTML = "thank you very much";
+            document.getElementById("codeEnter5").innerHTML = "Thank you very much";
             bookToTaken5();
             clearCode5();
          }else{
-            document.getElementById("codeEnter5").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter5").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1312,11 +1310,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID6, function ( datastream ){
          if (datastream["current_value"] === enteredCC6){
-            document.getElementById("codeEnter6").innerHTML = "thank you very much";
+            document.getElementById("codeEnter6").innerHTML = "Thank you very much";
             bookToTaken6();
             clearCode6();
          }else{
-            document.getElementById("codeEnter6").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter6").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1329,11 +1327,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID7, function ( datastream ){
          if (datastream["current_value"] === enteredCC7){
-            document.getElementById("codeEnter7").innerHTML = "thank you very much";
+            document.getElementById("codeEnter7").innerHTML = "Thank you very much";
             bookToTaken7();
             clearCode7();
          }else{
-            document.getElementById("codeEnter7").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter7").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1346,11 +1344,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID8, function ( datastream ){
          if (datastream["current_value"] === enteredCC8){
-            document.getElementById("codeEnter8").innerHTML = "thank you very much";
+            document.getElementById("codeEnter8").innerHTML = "Thank you very much";
             bookToTaken8();
             clearCode8();
          }else{
-            document.getElementById("codeEnter8").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter8").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1363,11 +1361,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID9, function ( datastream ){
          if (datastream["current_value"] === enteredCC9){
-            document.getElementById("codeEnter9").innerHTML = "thank you very much";
+            document.getElementById("codeEnter9").innerHTML = "Thank you very much";
             bookToTaken9();
             clearCode9();
          }else{
-            document.getElementById("codeEnter9").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter9").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1380,11 +1378,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID10, function ( datastream ){
          if (datastream["current_value"] === enteredCC10){
-            document.getElementById("codeEnter10").innerHTML = "thank you very much";
+            document.getElementById("codeEnter10").innerHTML = "Thank you very much";
             bookToTaken10();
             clearCode10();
          }else{
-            document.getElementById("codeEnter10").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter10").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1397,11 +1395,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID11, function ( datastream ){
          if (datastream["current_value"] === enteredCC11){
-            document.getElementById("codeEnter11").innerHTML = "thank you very much";
+            document.getElementById("codeEnter11").innerHTML = "Thank you very much";
             bookToTaken11();
             clearCode11();
          }else{
-            document.getElementById("codeEnter11").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter11").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
@@ -1414,11 +1412,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID12, function ( datastream ){
          if (datastream["current_value"] === enteredCC12){
-            document.getElementById("codeEnter12").innerHTML = "thank you very much";
+            document.getElementById("codeEnter12").innerHTML = "Thank you very much";
             bookToTaken12();
             clearCode12();
          }else{
-            document.getElementById("codeEnter12").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter12").innerHTML = "Invalid code. Please refresh the page and try again";
          }
       });
    }
