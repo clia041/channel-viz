@@ -253,8 +253,7 @@
 <script src="http://d23cj0cdvyoxg0.cloudfront.net/xivelyjs-1.0.4.min.js"></script>
 
 <script>
-   $(document).ready(function($) 
-   {
+   $(document).ready(function($){
 //GLOBAL VARIABLES
       var feedID  = 1868918819,  
           API_KEY = "ywafB6MNLUakqggSfAgfrSaQoyRhPsbYbRVfuqVILy5ctgQr";
@@ -274,9 +273,6 @@
           f7=document.getElementById("space7"), f7tx=f7.getContext("2d"), f8=document.getElementById("space8"), f8tx=f8.getContext("2d"),
           f9=document.getElementById("space9"), f9tx=f9.getContext("2d"), f10=document.getElementById("space10"), f10tx=f10.getContext("2d"),
           f11=document.getElementById("space11"), f11tx=f11.getContext("2d"), f12=document.getElementById("space12"), f12tx=f12.getContext("2d");
-          
-//-------------------------------------------------------------------------------------------------------------          
-//NO. OF FREE SPACES
 
 //-------------------------------------------------------------------------------------------------------------
 //STATUS DISPLAY FOR SPACE 1  
@@ -355,14 +351,12 @@
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(220,20,60)";
          f2tx.strokeText("TAKEN",36,50);  
-       
-           
+      
       }else if(datastream_updated["current_value"] == '2'){
          f2tx.clearRect(0,0,space2.width,space2.height);
          f2tx.font = "50px Arial";
          f2tx.strokeStyle="rgb(154,205,50)";
          f2tx.strokeText("BOOKED",36,50);
-       
       }
    });
    });
@@ -373,23 +367,19 @@
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
-         f3tx.strokeText("FREE",36,50);
-         
-         
+         f3tx.strokeText("FREE",36,50)
         
       }else if(datastream["current_value"] == '1') {
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(220,20,60)";
          f3tx.strokeText("TAKEN",36,50);
-    
            
       }else if(datastream["current_value"] == '2'){
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("BOOKED",36,50);
- 
      };
 //UPDATE STATUS DISPLAY FOR SPACE 3
    xively.datastream.subscribe( feedID, datastreamID3, function ( event , datastream_updated ){
@@ -398,21 +388,18 @@
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("FREE",36,50);
-      
         
       }else if(datastream_updated["current_value"] == '1') {
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(220,20,60)";
          f3tx.strokeText("TAKEN",36,50); 
-     
            
       }else if(datastream_updated["current_value"] == '2'){
          f3tx.clearRect(0,0,space3.width,space3.height);
          f3tx.font = "50px Arial";
          f3tx.strokeStyle="rgb(154,205,50)";
          f3tx.strokeText("BOOKED",36,50);
-      
       }
    });
    });
@@ -424,7 +411,6 @@
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(154,205,50)";
          f4tx.strokeText("FREE",36,50);
-       
         
       }else if(datastream["current_value"] == '1') {
          f4tx.clearRect(0,0,space4.width,space4.height);
@@ -445,21 +431,18 @@
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(154,205,50)";
          f4tx.strokeText("FREE",36,50);
-
         
       }else if(datastream_updated["current_value"] == '1') {
          f4tx.clearRect(0,0,space4.width,space4.height);
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(220,20,60)";
          f4tx.strokeText("TAKEN",36,50); 
-         
-           
+      
       }else if(datastream_updated["current_value"] == '2'){
          f4tx.clearRect(0,0,space4.width,space4.height);
          f4tx.font = "50px Arial";
          f4tx.strokeStyle="rgb(154,205,50)";
          f4tx.strokeText("BOOKED",36,50);
-      
       }
    });
    });
@@ -471,7 +454,6 @@
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(154,205,50)";
          f5tx.strokeText("FREE",36,50);
-       
         
       }else if(datastream["current_value"] == '1') {
          f5tx.clearRect(0,0,space5.width,space5.height);
@@ -492,21 +474,18 @@
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(154,205,50)";
          f5tx.strokeText("FREE",36,50);
-      
-        
+
       }else if(datastream_updated["current_value"] == '1') {
          f5tx.clearRect(0,0,space5.width,space5.height);
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(220,20,60)";
          f5tx.strokeText("TAKEN",36,50); 
-    
-           
+   
       }else if(datastream_updated["current_value"] == '2'){
          f5tx.clearRect(0,0,space5.width,space5.height);
          f5tx.font = "50px Arial";
          f5tx.strokeStyle="rgb(154,205,50)";
          f5tx.strokeText("BOOKED",36,50);
-        
       }
    });
    });
@@ -518,7 +497,6 @@
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(154,205,50)";
          f6tx.strokeText("FREE",36,50);
-        
         
       }else if(datastream["current_value"] == '1') {
          f6tx.clearRect(0,0,space3.width,space3.height);
@@ -539,21 +517,18 @@
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(154,205,50)";
          f6tx.strokeText("FREE",36,50);
-      
-        
+
       }else if(datastream_updated["current_value"] == '1') {
          f6tx.clearRect(0,0,space3.width,space3.height);
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(220,20,60)";
          f6tx.strokeText("TAKEN",36,50); 
-        
-           
+   
       }else if(datastream_updated["current_value"] == '2'){
          f6tx.clearRect(0,0,space3.width,space3.height);
          f6tx.font = "50px Arial";
          f6tx.strokeStyle="rgb(154,205,50)";
          f6tx.strokeText("BOOKED",36,50);
-        
       }
    });
    });
@@ -565,8 +540,7 @@
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(154,205,50)";
          f7tx.strokeText("FREE",36,50);
-    
-        
+
       }else if(datastream["current_value"] == '1') {
          f7tx.clearRect(0,0,space3.width,space3.height);
          f7tx.font = "50px Arial";
@@ -586,21 +560,18 @@
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(154,205,50)";
          f7tx.strokeText("FREE",36,50);
-     
-       
+
       }else if(datastream_updated["current_value"] == '1') {
          f7tx.clearRect(0,0,space3.width,space3.height);
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(220,20,60)";
          f7tx.strokeText("TAKEN",36,50);  
-         
-           
+   
       }else if(datastream_updated["current_value"] == '2'){
          f7tx.clearRect(0,0,space3.width,space3.height);
          f7tx.font = "50px Arial";
          f7tx.strokeStyle="rgb(154,205,50)";
          f7tx.strokeText("BOOKED",36,50);
-       
       }
    });
    });
@@ -612,8 +583,7 @@
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(154,205,50)";
          f8tx.strokeText("FREE",36,50);
-       
-        
+ 
       }else if(datastream["current_value"] == '1') {
          f8tx.clearRect(0,0,space3.width,space3.height);
          f8tx.font = "50px Arial";
@@ -633,21 +603,18 @@
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(154,205,50)";
          f8tx.strokeText("FREE",36,50);
-       
-        
+ 
       }else if(datastream_updated["current_value"] == '1') {
          f8tx.clearRect(0,0,space3.width,space3.height);
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(220,20,60)";
          f8tx.strokeText("TAKEN",36,50); 
-         
-           
+    
       }else if(datastream_updated["current_value"] == '2'){
          f8tx.clearRect(0,0,space3.width,space3.height);
          f8tx.font = "50px Arial";
          f8tx.strokeStyle="rgb(154,205,50)";
          f8tx.strokeText("BOOKED",36,50);
-        
       }
    });
    });
@@ -659,8 +626,7 @@
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(154,205,50)";
          f9tx.strokeText("FREE",36,50);
-      
-        
+  
       }else if(datastream["current_value"] == '1') {
          f9tx.clearRect(0,0,space3.width,space3.height);
          f9tx.font = "50px Arial";
@@ -680,21 +646,18 @@
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(154,205,50)";
          f9tx.strokeText("FREE",36,50);
-    
-        
+
       }else if(datastream_updated["current_value"] == '1') {
          f9tx.clearRect(0,0,space3.width,space3.height);
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(220,20,60)";
          f9tx.strokeText("TAKEN",36,50);
-        
-           
+    
       }else if(datastream_updated["current_value"] == '2'){
          f9tx.clearRect(0,0,space3.width,space3.height);
          f9tx.font = "50px Arial";
          f9tx.strokeStyle="rgb(154,205,50)";
          f9tx.strokeText("BOOKED",36,50);
-     
       }
    });
    });
@@ -706,8 +669,7 @@
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(154,205,50)";
          f10tx.strokeText("FREE",36,50);
-       
-        
+ 
       }else if(datastream["current_value"] == '1') {
          f10tx.clearRect(0,0,space3.width,space3.height);
          f10tx.font = "50px Arial";
@@ -727,21 +689,18 @@
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(154,205,50)";
          f10tx.strokeText("FREE",36,50);
-         
-        
+
       }else if(datastream_updated["current_value"] == '1') {
          f10tx.clearRect(0,0,space3.width,space3.height);
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(220,20,60)";
          f10tx.strokeText("TAKEN",36,50);
-     
-           
+   
       }else if(datastream_updated["current_value"] == '2'){
          f10tx.clearRect(0,0,space3.width,space3.height);
          f10tx.font = "50px Arial";
          f10tx.strokeStyle="rgb(154,205,50)";
          f10tx.strokeText("BOOKED",36,50);
-        
       }
    });
    });
@@ -753,8 +712,7 @@
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(154,205,50)";
          f11tx.strokeText("FREE",36,50);
-         
-        
+
       }else if(datastream["current_value"] == '1') {
          f11tx.clearRect(0,0,space3.width,space3.height);
          f11tx.font = "50px Arial";
@@ -774,21 +732,18 @@
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(154,205,50)";
          f11tx.strokeText("FREE",36,50);
-       
-        
+
       }else if(datastream_updated["current_value"] == '1') {
          f11tx.clearRect(0,0,space3.width,space3.height);
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(220,20,60)";
          f11tx.strokeText("TAKEN",36,50);
-       
-           
+    
       }else if(datastream_updated["current_value"] == '2'){
          f11tx.clearRect(0,0,space3.width,space3.height);
          f11tx.font = "50px Arial";
          f11tx.strokeStyle="rgb(154,205,50)";
          f11tx.strokeText("BOOKED",36,50);
-        
       }
    });
    });
@@ -800,8 +755,7 @@
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(154,205,50)";
          f12tx.strokeText("FREE",36,50);
-        
-        
+
       }else if(datastream["current_value"] == '1') {
          f12tx.clearRect(0,0,space3.width,space3.height);
          f12tx.font = "50px Arial";
@@ -821,21 +775,18 @@
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(154,205,50)";
          f12tx.strokeText("FREE",36,50);
-         
-        
+
       }else if(datastream_updated["current_value"] == '1') {
          f12tx.clearRect(0,0,space3.width,space3.height);
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(220,20,60)";
          f12tx.strokeText("TAKEN",36,50);
-        
-           
+   
       }else if(datastream_updated["current_value"] == '2'){
          f12tx.clearRect(0,0,space3.width,space3.height);
          f12tx.font = "50px Arial";
          f12tx.strokeStyle="rgb(154,205,50)";
-         f12tx.strokeText("BOOKED",36,50);
-        
+         f12tx.strokeText("BOOKED",36,50); 
       }
    });
    });
@@ -851,9 +802,9 @@
       xively.setKey(API_KEY);
       xively.datastream.get (feedID, datastreamID1, function ( datastream ){
          if (datastream["current_value"]=='1'){
-            document.getElementById("book1").innerHTML = "sorry this spot is already taken";
+            document.getElementById("book1").innerHTML = "Sorry this spot is taken, you cannot book here";
          }else if (datastream["current_value"]=='2'){
-            document.getElementById("book1").innerHTML = "sorry this spot is already booked";
+            document.getElementById("book1").innerHTML = "Sorry this spot is already booked, you cannot book here";
          }else{
       
             xively.setKey(API_KEYc);
@@ -864,15 +815,15 @@
                
             if (!isNaN(enteredC1)){
                if (enteredC1.length == 16){
-                  document.getElementById("book1").innerHTML = "thank";
+                  document.getElementById("book1").innerHTML = "Thank you. ";
                   handleBook1()
                   xively.feed.update(feedIDc, data, function(data){});
-                  document.getElementById("book1").innerHTML = "Your booking code is:" + bookCode1;
+                  document.getElementById("book1").innerHTML = "Your booking code is:  " + bookCode1;
                } else {
-                  document.getElementById("book1").innerHTML = "nope";
+                  document.getElementById("book1").innerHTML = "Invalid credit card number. Please refresh the page and try again";
                }
             }else{
-               document.getElemenById("book1").innerHTML = "invalid";
+               document.getElemenById("book1").innerHTML = "Invalid credit card number. Please refresh the page and try again";
             }
          }
       });
