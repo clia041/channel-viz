@@ -1226,11 +1226,11 @@
       xively.setKey(API_KEYc);
       xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
          if (datastream["current_value"] === enteredCC1){
-            document.getElementById("codeEnter1").innerHTML = "thank you very much";
+            document.getElementById("codeEnter1").innerHTML = "Thank you very much";
             bookToTaken1();
             clearCode1();
          }else{
-            document.getElementById("codeEnter1").innerHTML = "entered wrong code, please try again";
+            document.getElementById("codeEnter1").innerHTML = "Invalid code, please refresh the page and try again";
          }
       });
    }
