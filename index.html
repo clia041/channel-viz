@@ -1229,7 +1229,7 @@
       
       xively.setKey(API_KEY);
       xively.datastream.get(feedID, datastreamID1, function (datastream){
-         if (datastrean["current_value"] == '3'){
+         if (datastream["current_value"] == '3'){
             xively.setKey(API_KEYc);
             xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
                if (datastream["current_value"] === enteredCC1){
@@ -1241,7 +1241,7 @@
                }
             });
          }else{
-          document.getElementById("codeEnter1").innerHTL = "Cannot eneter code yet";  
+          document.getElementById("codeEnter1").innerHTL = "Cannot enter code yet";  
          }
          
          
