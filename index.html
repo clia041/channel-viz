@@ -1227,16 +1227,25 @@
       var enteredCC1 = document.getElementById("codeE1").value,
           datastreamcID1 = "code1";
       
-      xively.setKey(API_KEYc);
-      xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
-         if (datastream["current_value"] === enteredCC1){
-            document.getElementById("codeEnter1").innerHTML = "Thank you very much";
-            bookToTaken1();
-            clearCode1();
+      xively.setKey(API_KEY);
+      xively.datastream.get(feedID, datastreamID1, function (datastream){
+         if (datastrean["current_value"] == '3')
+            xively.setKey(API_KEYc);
+            xively.datastream.get (feedIDc, datastreamcID1, function ( datastream ){
+               if (datastream["current_value"] === enteredCC1){
+                  document.getElementById("codeEnter1").innerHTML = "Thank you very much";
+                  bookToTaken1();
+                  clearCode1();
+               }else{
+                  document.getElementById("codeEnter1").innerHTML = "Invalid code. Please refresh the page and try again";
+               }
+            });
          }else{
-            document.getElementById("codeEnter1").innerHTML = "Invalid code. Please refresh the page and try again";
+          document.getElementById("codeEnter1").innerHTL = "Cannot eneter code yet";  
          }
       });
+      
+      
    }
    
 //-------------------------------------------------------------------------------------------------------------
